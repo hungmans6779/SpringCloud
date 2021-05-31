@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
+Built-By: HackerK
+Build-Jdk: 15.0.2
 Implementation-Title: spring-cloud-ribbon (Consumer)
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: chiahung.hung
 Implementation-Vendor-Id: com.spring.cloud.ribbon
-Build-Jdk: 1.8.0_221
-Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.
+Created-By: Maven Integration for Eclipse
 
