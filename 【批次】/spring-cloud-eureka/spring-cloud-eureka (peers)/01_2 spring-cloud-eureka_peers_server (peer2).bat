@@ -1,0 +1,1 @@
+java -jar jar/spring-cloud-eureka_peers_server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
