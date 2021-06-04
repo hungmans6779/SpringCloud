@@ -16,7 +16,7 @@
 
 
 	<!-- 基本信息 -->
-	<name>spring-cloud-ribbon (POM)</name>
+	<name>spring-cloud-hystrix (POM)</name>
 	<description>Project for Spring Cloud Ribbon</description>
 
 	<!-- 項目說明 -->
