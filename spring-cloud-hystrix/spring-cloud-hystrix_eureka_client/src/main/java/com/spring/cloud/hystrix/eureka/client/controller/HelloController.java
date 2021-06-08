@@ -57,24 +57,10 @@ public class HelloController {
   private DiscoveryClient client;
 
 
-  /*
-   * URL 使用案例
-   * 
-   * http://provider1:8081/service-instances/hello-service
-   * http://provider2:8082/service-instances/hello-service
-   */
-  @RequestMapping(value = "/service-instances/{applicationName}", method = RequestMethod.GET)
-  public List<ServiceInstance> serviceInstancesByApplicationName(@PathVariable String applicationName) {
-    logger.info("applicationName = " + applicationName);
-    
-    return this.client.getInstances(applicationName);
-  }
-
-
 
   @RequestMapping(value = "/hello", method = RequestMethod.GET)
-  public String hello(@RequestParam(value = "name", defaultValue = "Hello World") String name) throws Exception {
-
+  public String hello(@RequestParam(value = "name", defaultValue = "Hello World") String name) throws Exception { 
+    
     // 熔斷測試(超過 1秒即進入熔斷)
     // int sleepTime = new Random().nextInt(3000);
     // logger.info("/hello, sleepTime ： " + sleepTime + ", name : " + name + ", port : " + port);
@@ -85,6 +71,20 @@ public class HelloController {
     return "Spring Cloud Hystrix, name : " + name + ", port : " + port;
   }
 
+  
+  
+  /*
+   * URL 使用案例
+   * 
+   * http://provider1:8081/service-instances/hello-service
+   * http://provider2:8082/service-instances/hello-service
+   */
+  @RequestMapping(value = "/service-instances/{applicationName}", method = RequestMethod.GET)
+  public List<ServiceInstance> serviceInstancesByApplicationName(@PathVariable String applicationName) {  
+    logger.info("applicationName = " + applicationName);
+    
+    return this.client.getInstances(applicationName);
+  }
   
   
 }
