@@ -2,6 +2,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+	<modelVersion>4.0.0</modelVersion>
+
+
 	<!-- 繼承： Spring Boot -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -10,6 +13,24 @@
 		<relativePath />
 	</parent>
 
+	<!-- 基本信息 -->
+	<name>spring-boot-admin (POM)</name>
+	<description>Project for Spring Boot Admin</description>
+
+	<!-- 項目說明 -->
+	<groupId>com.spring.boot</groupId>
+	<artifactId>spring-boot-admin</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<!-- 參數設定 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+
+
 	<!-- 子 Module -->
 	<modules>
 		<module>spring-boot-admin_server</module>
@@ -17,6 +38,7 @@
 	</modules>
 
 	<dependencyManagement>
+
 		<dependencies>
 
 			<!-- 子 Module (統一由這裡控制版本) -->
@@ -38,25 +60,14 @@
 
 
 
-	<!-- 基本信息 -->
-	<modelVersion>4.0.0</modelVersion>
-	<name>spring-boot-admin (POM)</name>
-	<description>Project for Spring Boot Admin</description>
-
-	<!-- 項目說明 -->
-	<groupId>com.spring.boot</groupId>
-	<artifactId>spring-boot-admin</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
-
-	<!-- 參數設定 -->
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-	</properties>
-
 	<dependencies>
 
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
