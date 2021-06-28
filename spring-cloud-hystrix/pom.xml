@@ -14,7 +14,6 @@
 	</parent>
 
 
-
 	<!-- 基本信息 -->
 	<name>spring-cloud-hystrix (POM)</name>
 	<description>Project for Spring Cloud Ribbon</description>
@@ -31,7 +30,6 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
-
 
 
 	<!-- 子 Module -->
@@ -96,8 +94,13 @@
 	</dependencyManagement>
 
 
-
 	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>3.2.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -139,7 +142,6 @@
 	</dependencies>
 
 
-
 	<build>
 		<plugins>
 			<plugin>
@@ -148,7 +150,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 
 </project>

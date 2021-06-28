@@ -13,7 +13,6 @@
 	</parent>
 
 
-
 	<!-- 基本信息 -->
 	<name>spring-cloud-hystrix (DashBoard)</name>
 	<description>spring-cloud-hystrix_dashboard</description>
@@ -22,7 +21,6 @@
 	<groupId>com.spring.cloud.hystrix.dashboard</groupId>
 	<artifactId>spring-cloud-hystrix_dashboard</artifactId>
 	<packaging>jar</packaging>
-
 
 
 	<dependencies>

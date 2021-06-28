@@ -2,6 +2,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+	<modelVersion>4.0.0</modelVersion>
+	
+	
 	<!-- 繼承： 父 Module -->
 	<parent>
 		<groupId>com.spring.cloud</groupId>
@@ -10,7 +13,6 @@
 	</parent>
 
 	<!-- 基本信息 -->
-	<modelVersion>4.0.0</modelVersion>
 	<name>spring-cloud-eureka (Server)</name>
 	<description>Spring Clound Eureka Server</description>
 	<url>http://peer1:1111,http://peer2:1112</url>
@@ -19,6 +21,7 @@
 	<groupId>com.spring.cloud.eureka</groupId>
 	<artifactId>spring-cloud-eureka_peers_server</artifactId>
 	<packaging>jar</packaging>
+
 
 	<dependencies>
 	
