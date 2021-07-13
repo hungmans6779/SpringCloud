@@ -1,0 +1,1 @@
+java -jar jar/spring-cloud-hystrix_ribbon_consumer-0.0.1-SNAPSHOT.jar

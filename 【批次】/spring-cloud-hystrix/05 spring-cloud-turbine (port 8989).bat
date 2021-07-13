@@ -1,0 +1,1 @@
+java -jar jar/spring-cloud-hystrix_turbine-0.0.1-SNAPSHOT.jar

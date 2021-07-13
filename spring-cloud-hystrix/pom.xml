@@ -24,8 +24,8 @@
 	<!-- 基本信息 -->
 	<name>spring-cloud-hystrix (POM)</name>
 	<description>Spring Cloud Hystrix</description>
-	
-	
+
+
 	<!-- 參數設定 -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,6 +39,7 @@
 		<module>spring-cloud-hystrix_eureka_server</module>
 		<module>spring-cloud-hystrix_eureka_client</module>
 		<module>spring-cloud-hystrix_ribbon_consumer</module>
+		<module>spring-cloud-hystrix_turbine</module>
 		<module>spring-cloud-hystrix_dashboard</module>
 	</modules>
 
@@ -65,6 +66,13 @@
 			<dependency>
 				<groupId>com.spring.cloud.hystrix.ribbon</groupId>
 				<artifactId>spring-cloud-hystrix_ribbon_consumer</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<!-- 子 Module (統一由這裡控制版本) -->
+			<dependency>
+				<groupId>com.spring.cloud.hystrix.turbine</groupId>
+				<artifactId>spring-cloud-hystrix_turbine</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 

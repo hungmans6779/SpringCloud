@@ -19,7 +19,7 @@
 	<packaging>jar</packaging>
 
 	<!-- 基本信息 -->
-	<name>spring-cloud-hystrix_eureka_server (Server)</name>
+	<name>spring-cloud-hystrix_eureka_server</name>
 	<description>Eureka Server</description>
 
 	<dependencies>

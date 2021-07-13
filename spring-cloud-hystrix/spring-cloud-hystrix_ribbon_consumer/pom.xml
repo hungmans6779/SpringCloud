@@ -19,7 +19,7 @@
 	<packaging>jar</packaging>
 
 	<!-- 基本信息 -->
-	<name>spring-cloud-hystrix_ribbon_consumer (Consumer)</name>
+	<name>spring-cloud-hystrix_ribbon_consumer</name>
 	<description>Ribbon Consumer</description>
 	
 
