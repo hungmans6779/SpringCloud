@@ -46,10 +46,10 @@ public class HelloService {
 
   @Autowired
   RestTemplate restTemplate;
-
   
   
-  @HystrixCommand(fallbackMethod = "helloFallback", commandKey = "helloKey")
+  
+  @HystrixCommand(fallbackMethod="helloFallback", commandKey="helloKey")
   public String helloService() {
     
     long start = System.currentTimeMillis();
@@ -58,17 +58,18 @@ public class HelloService {
     String body = responseEntity.getBody();
 
     long end = System.currentTimeMillis();
+    
+    
     logger.info("Spend time : " + (end - start));
     
     return body.toString();
-  }
+  } // end helloService
 
  
   
   private String helloFallback() {
     return "error";
   }
-
   
   
   

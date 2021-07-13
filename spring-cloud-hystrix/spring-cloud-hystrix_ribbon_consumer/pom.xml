@@ -13,16 +13,15 @@
 
 
 
-	<!-- 基本信息 -->
-	<name>spring-cloud-hystrix_ribbon_consumer (Consumer)</name>
-	<description>spring-cloud-hystrix_ribbon_consumer</description>
-	
 	<!-- 項目說明 -->
 	<groupId>com.spring.cloud.hystrix.ribbon</groupId>
 	<artifactId>spring-cloud-hystrix_ribbon_consumer</artifactId>
 	<packaging>jar</packaging>
 
-
+	<!-- 基本信息 -->
+	<name>spring-cloud-hystrix_ribbon_consumer (Consumer)</name>
+	<description>Ribbon Consumer</description>
+	
 
 	<dependencies>
 

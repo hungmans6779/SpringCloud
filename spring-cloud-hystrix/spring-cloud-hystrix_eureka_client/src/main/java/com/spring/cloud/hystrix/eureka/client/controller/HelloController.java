@@ -23,6 +23,7 @@
 package com.spring.cloud.hystrix.eureka.client.controller;
 
 import java.util.List;
+import java.util.Random;
 
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +48,6 @@ public class HelloController {
   /** The logger. */
   private final Logger logger = Logger.getLogger(getClass());
 
-
   /** The port. */
   @Value("${server.port}")
   private String port;
@@ -57,16 +57,13 @@ public class HelloController {
   private DiscoveryClient client;
 
 
-
-  @RequestMapping(value = "/hello", method = RequestMethod.GET)
-  public String hello(@RequestParam(value = "name", defaultValue = "Hello World") String name) throws Exception { 
+  @RequestMapping(value="/hello", method=RequestMethod.GET)
+  public String hello(@RequestParam(value="name", defaultValue="hello Spring") String name) throws Exception {
     
     // 熔斷測試(超過 1秒即進入熔斷)
-    // int sleepTime = new Random().nextInt(3000);
-    // logger.info("/hello, sleepTime ： " + sleepTime + ", name : " + name + ", port : " + port);
-    // Thread.sleep(sleepTime);
-    
-    logger.info("/hello, name : " + name + ", port : " + port);
+    int sleepTime = new Random().nextInt(10);
+    logger.info("/hello, sleepTime ： " + sleepTime + ", name : " + name + ", port : " + port);
+    Thread.sleep(sleepTime);
     
     return "Spring Cloud Hystrix, name : " + name + ", port : " + port;
   }
@@ -79,8 +76,9 @@ public class HelloController {
    * http://provider1:8081/service-instances/hello-service
    * http://provider2:8082/service-instances/hello-service
    */
-  @RequestMapping(value = "/service-instances/{applicationName}", method = RequestMethod.GET)
+  @RequestMapping(value="/service-instances/{applicationName}", method=RequestMethod.GET)
   public List<ServiceInstance> serviceInstancesByApplicationName(@PathVariable String applicationName) {  
+    
     logger.info("applicationName = " + applicationName);
     
     return this.client.getInstances(applicationName);

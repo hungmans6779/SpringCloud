@@ -13,16 +13,14 @@
 
 
 
-	<!-- 基本信息 -->
-	<name>spring-cloud-hystrix_eureka_server (Server)</name>
-	<description>spring-cloud-hystrix_eureka_server</description>
-
 	<!-- 項目說明 -->
 	<groupId>com.spring.cloud.hystrix.eureka.server</groupId>
 	<artifactId>spring-cloud-hystrix_eureka_server</artifactId>
 	<packaging>jar</packaging>
 
-
+	<!-- 基本信息 -->
+	<name>spring-cloud-hystrix_eureka_server (Server)</name>
+	<description>Eureka Server</description>
 
 	<dependencies>
 

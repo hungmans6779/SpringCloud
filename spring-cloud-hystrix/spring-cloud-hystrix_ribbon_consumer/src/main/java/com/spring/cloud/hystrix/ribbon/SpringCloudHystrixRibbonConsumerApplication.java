@@ -36,6 +36,7 @@ import org.springframework.web.client.RestTemplate;
  * 
  * </pre>
  */
+
 @EnableCircuitBreaker
 @EnableDiscoveryClient
 @SpringCloudApplication
@@ -46,13 +47,14 @@ public class SpringCloudHystrixRibbonConsumerApplication {
    *
    * @return the rest template
    */
+
   @Bean
   @LoadBalanced
-  RestTemplate restTemplate() {
+  RestTemplate restTempalte() {
     return new RestTemplate();
   }
-
-
+  
+  
   /**
    * The main method.
    *
@@ -62,4 +64,5 @@ public class SpringCloudHystrixRibbonConsumerApplication {
     SpringApplication.run(SpringCloudHystrixRibbonConsumerApplication.class, args);
   }
  
+  
 }

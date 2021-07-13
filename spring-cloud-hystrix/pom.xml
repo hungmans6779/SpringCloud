@@ -14,9 +14,6 @@
 	</parent>
 
 
-	<!-- 基本信息 -->
-	<name>spring-cloud-hystrix (POM)</name>
-	<description>Project for Spring Cloud Ribbon</description>
 
 	<!-- 項目說明 -->
 	<groupId>com.spring.cloud.hystrix</groupId>
@@ -24,6 +21,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
+	<!-- 基本信息 -->
+	<name>spring-cloud-hystrix (POM)</name>
+	<description>Spring Cloud Hystrix</description>
+	
+	
 	<!-- 參數設定 -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

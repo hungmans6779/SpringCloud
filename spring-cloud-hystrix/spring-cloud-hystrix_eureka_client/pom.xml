@@ -12,14 +12,15 @@
 	</parent>
 
 
-	<!-- 基本信息 -->
-	<name>spring-cloud-hystrix_eureka_client (Client)</name>
-	<description>spring-cloud-hystrix_eureka_client</description>
-
 	<!-- 項目說明 -->
 	<groupId>com.spring.cloud.hystrix.eureka.client</groupId>
 	<artifactId>spring-cloud-hystrix_eureka_client</artifactId>
 	<packaging>jar</packaging>
+
+	<!-- 基本信息 -->
+	<name>spring-cloud-hystrix_eureka_client (Client)</name>
+	<description>Eureka Client</description>
+
 
 
 	<dependencies>
