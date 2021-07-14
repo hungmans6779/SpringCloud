@@ -43,7 +43,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-
   /** The logger. */
   private final Logger logger = Logger.getLogger(getClass());
 
@@ -64,19 +63,5 @@ public class HelloController {
     return "Spring Cloud Project => " + name + " , port : " + port;
   }
 
-  
-  
-  /*
-   * URL 使用案例
-   * 
-   * http://provider1:8081/service-instances/hello-service
-   * http://provider2:8082/service-instances/hello-service
-   */
-  @RequestMapping(value="/service-instances/{applicationName}", method=RequestMethod.GET)
-  public List<ServiceInstance> serviceInstancesByApplicationName(@PathVariable String applicationName) {  
-   
-    return this.client.getInstances(applicationName);
-  }
-  
   
 }
