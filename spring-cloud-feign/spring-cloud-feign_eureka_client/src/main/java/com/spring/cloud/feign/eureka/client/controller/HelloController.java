@@ -23,7 +23,6 @@
 package com.spring.cloud.feign.eureka.client.controller;
 
 import java.util.List;
-import java.util.Random;
 
 import org.jboss.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,14 +57,11 @@ public class HelloController {
 
 
   @RequestMapping(value="/hello", method=RequestMethod.GET)
-  public String hello(@RequestParam(value="name", defaultValue="hello Spring Cloud Feign") String name) throws Exception {
-    
-    // 熔斷測試(超過 1秒即進入熔斷)
-    int sleepTime = new Random().nextInt(10);
-    logger.info("/hello, sleepTime ： " + sleepTime + ", name : " + name + ", port : " + port);
-    Thread.sleep(sleepTime);
-    
-    return "Spring Cloud Hystrix, name : " + name + ", port : " + port;
+  public String hello(@RequestParam(value="name", defaultValue="Feign") String name) throws Exception {
+   
+    logger.info("/hello, name : " + name + ", port : " + port);
+ 
+    return "Spring Cloud Project => " + name + " , port : " + port;
   }
 
   
@@ -78,9 +74,7 @@ public class HelloController {
    */
   @RequestMapping(value="/service-instances/{applicationName}", method=RequestMethod.GET)
   public List<ServiceInstance> serviceInstancesByApplicationName(@PathVariable String applicationName) {  
-    
-    logger.info("applicationName = " + applicationName);
-    
+   
     return this.client.getInstances(applicationName);
   }
   

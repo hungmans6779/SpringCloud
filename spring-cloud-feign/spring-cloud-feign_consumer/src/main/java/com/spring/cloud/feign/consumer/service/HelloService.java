@@ -22,11 +22,8 @@
  */
 package com.spring.cloud.feign.consumer.service;
 
-import org.jboss.logging.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 /**
@@ -34,33 +31,10 @@ import org.springframework.web.client.RestTemplate;
  *
  * @author chiahung.hung
  */
-@Service
-public class HelloService {
-
-  /** The logger. */
-  private final Logger logger = Logger.getLogger(getClass());
-
-  @Autowired
-  RestTemplate restTemplate;
+@FeignClient("hello-service")
+public interface HelloService {
   
+  @RequestMapping("/hello")
+  public String hello();
   
-  
-  public String helloService() {
-    
-    long start = System.currentTimeMillis();
-    
-    ResponseEntity<String> responseEntity = restTemplate.getForEntity("http://hello-service/hello", String.class);
-    String body = responseEntity.getBody();
-
-    long end = System.currentTimeMillis();
-    
-    
-    logger.info("Spend time : " + (end - start));
-    
-    return body.toString();
-  } // end helloService
-
- 
-  
-
 }
