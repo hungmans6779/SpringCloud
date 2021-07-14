@@ -13,7 +13,7 @@
 	<!-- 項目說明 -->
 	<groupId>com.spring.cloud.feign.eureka.server</groupId>
 	<artifactId>spring-cloud-feign_eureka_server</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	
 	<!-- 基本信息 -->
 	<name>spring-cloud-feign_eureka_server</name>

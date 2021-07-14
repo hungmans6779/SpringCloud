@@ -4,7 +4,6 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-
 	<!-- 繼承： Spring Boot -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -38,7 +37,7 @@
 	<modules>
 		<module>spring-cloud-feign_eureka_server</module>
 		<module>spring-cloud-feign_eureka_client</module>
-		<module>spring-cloud-feign_ribbon_consumer</module>
+		<module>spring-cloud-feign_consumer</module>
 	</modules>
 
 	<!-- 管理 子 Module 的版本 -->
@@ -63,7 +62,7 @@
 			<!-- 子 Module (統一由這裡控制版本) -->
 			<dependency>
 				<groupId>com.spring.cloud.feign.ribbon</groupId>
-				<artifactId>spring-cloud-feign_ribbon_consumer</artifactId>
+				<artifactId>spring-cloud-feign_consumer</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
@@ -88,13 +87,8 @@
 	</dependencyManagement>
 
 
-	<dependencies>
 
-		<dependency>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-resources-plugin</artifactId>
-			<version>3.2.0</version>
-		</dependency>
+	<dependencies>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -133,6 +127,12 @@
 			<optional>true</optional>
 		</dependency>
 
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+		
 	</dependencies>
 
 
