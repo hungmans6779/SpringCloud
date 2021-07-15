@@ -78,14 +78,5 @@ public class User {
       this.age = age;
   }
 
-  /**
-   * To string.
-   *
-   * @return the string
-   */
-  @Override
-  public String toString() {
-      return "name = " + name + ", age = " + age;
-  }
 
 }

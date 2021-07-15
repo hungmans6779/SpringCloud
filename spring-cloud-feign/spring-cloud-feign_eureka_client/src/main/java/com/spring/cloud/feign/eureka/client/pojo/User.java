@@ -85,7 +85,7 @@ public class User {
    */
   @Override
   public String toString() {
-      return "name = " + name + ", age = " + age + "]";
+      return "/hello2,  name : " + name + ", age " + age;
   }
 
 }

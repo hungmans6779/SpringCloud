@@ -54,23 +54,23 @@ public class HelloController {
   public String hello() {
     logger.info("/hello, port : " + port);
     
-    return "Spring Cloud Project : Feign, port : " + port;
+    return "/hello, port : " + port;
   }
 
  
   
   @RequestMapping(value = "/hello1", method = RequestMethod.GET)
   public String hello(@RequestParam(value="name", defaultValue="Feign") String name) {
-    logger.info("/hello1  port : " + port +", name : " + name);
+    logger.info("/hello1,  port : " + port + ", name : " + name);
  
-    return "Spring Cloud Project => " + name + " , port : " + port;
+    return "/hello1,  port : " + port + ", name : " + name;
   }
 
 
   
   @RequestMapping(value = "/hello2", method = RequestMethod.GET)
   public User hello(@RequestHeader String name, @RequestHeader Integer age) {
-    logger.info("/hello2  port : " + port +", name : " + name + ", age " + age);
+    logger.info("/hello2,  port : " + port + ", name : " + name + ", age " + age);
     
     return new User(name, age); 
   }
@@ -79,9 +79,9 @@ public class HelloController {
   
   @RequestMapping(value = "/hello3", method = RequestMethod.POST)
   public String hello(@RequestBody User user) {
-    logger.info("/hello3  port : " + port +", name : " + user.getName() + ", age " + user.getAge());
+    logger.info("/hello3,  port : " + port + ", name : " + user.getName() + ", age " + user.getAge());
     
-    return "Hello " + user.getName() + ", " + user.getAge();
+    return "/hello3,  port : " + port + ", name : " + user.getName() + ", age " + user.getAge();
   }
   
   
