@@ -54,7 +54,7 @@ public class HelloController {
   @Autowired
   private DiscoveryClient client;
 
-
+  
   @RequestMapping(value="/hello", method=RequestMethod.GET)
   public String hello(@RequestParam(value="name", defaultValue="Feign") String name) throws Exception {
    
@@ -63,5 +63,4 @@ public class HelloController {
     return "Spring Cloud Project => " + name + " , port : " + port;
   }
 
-  
 }

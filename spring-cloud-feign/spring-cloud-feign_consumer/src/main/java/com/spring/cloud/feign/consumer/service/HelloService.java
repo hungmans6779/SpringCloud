@@ -24,6 +24,7 @@ package com.spring.cloud.feign.consumer.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 /**
@@ -35,6 +36,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface HelloService {
   
   @RequestMapping("/hello")
-  public String hello();
+  public String hello(@RequestParam(value="name", defaultValue="Feign") String name);
+ 
   
 }

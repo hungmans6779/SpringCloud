@@ -24,6 +24,7 @@ package com.spring.cloud.feign.consumer.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.cloud.feign.consumer.service.HelloService;
@@ -45,9 +46,9 @@ public class ConsumerController {
    *
    * @return the string
    */
-  @RequestMapping(value="/feign-consumer", method = RequestMethod.GET)
-  public String helloConsumer() {
-    return helloService.hello();
+  @RequestMapping(value="/feign-consumer-hello", method = RequestMethod.GET)
+  public String helloConsumer(@RequestParam(value="name", defaultValue="Feign") String name) throws Exception {
+    return helloService.hello(name);
   }
   
  

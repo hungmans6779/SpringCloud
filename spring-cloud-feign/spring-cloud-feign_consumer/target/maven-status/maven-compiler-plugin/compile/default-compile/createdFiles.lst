@@ -1,0 +1,3 @@
+com\spring\cloud\feign\consumer\controller\ConsumerController.class
+com\spring\cloud\feign\consumer\SpringCloudFeignConsumerApplication.class
+com\spring\cloud\feign\consumer\service\HelloService.class

@@ -29,12 +29,6 @@
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
-		<!-- Spring Cloud Ribbon -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-		</dependency>
-		
 	    <!-- Spring Cloud Feign -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
