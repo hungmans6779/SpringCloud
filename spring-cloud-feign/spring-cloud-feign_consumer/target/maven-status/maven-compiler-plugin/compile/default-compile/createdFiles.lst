@@ -1,5 +1,0 @@
-com\spring\cloud\feign\consumer\controller\ConsumerV1Controller.class
-com\spring\cloud\feign\consumer\SpringCloudFeignConsumerApplication.class
-com\spring\cloud\feign\consumer\controller\ConsumerV2Controller.class
-com\spring\cloud\feign\consumer\service\HelloService.class
-com\spring\cloud\feign\consumer\pojo\User.class
