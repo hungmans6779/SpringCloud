@@ -23,8 +23,17 @@
 package com.spring.cloud.feign.consumer.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.spring.cloud.feign.consumer.pojo.User;
+
+
+
+
 
 
 /**
@@ -36,7 +45,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface HelloService {
   
   @RequestMapping("/hello")
-  public String hello(@RequestParam(value="name", defaultValue="Feign") String name);
+  public String hello();
  
+  
+  @RequestMapping(value = "/hello1", method = RequestMethod.GET)
+  public String hello(@RequestParam(value="name", defaultValue="Feign") String name);
+  
+  
+  @RequestMapping(value = "/hello2", method = RequestMethod.GET)
+  public User hello(@RequestHeader String name, @RequestHeader Integer age);
+  
+  
+  @RequestMapping(value = "/hello3", method = RequestMethod.POST)
+  public String hello(@RequestBody User user);
+  
   
 }

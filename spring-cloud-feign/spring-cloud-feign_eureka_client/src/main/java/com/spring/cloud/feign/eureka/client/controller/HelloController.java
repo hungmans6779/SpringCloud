@@ -22,18 +22,16 @@
  */
 package com.spring.cloud.feign.eureka.client.controller;
 
-import java.util.List;
-
 import org.jboss.logging.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.spring.cloud.feign.eureka.client.pojo.User;
 
 /**
  * <pre> HelloController, TODO: add Class Javadoc here. </pre>
@@ -43,6 +41,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
+  
   /** The logger. */
   private final Logger logger = Logger.getLogger(getClass());
 
@@ -50,17 +49,40 @@ public class HelloController {
   @Value("${server.port}")
   private String port;
 
-  /** The discovery client. */
-  @Autowired
-  private DiscoveryClient client;
-
   
-  @RequestMapping(value="/hello", method=RequestMethod.GET)
-  public String hello(@RequestParam(value="name", defaultValue="Feign") String name) throws Exception {
-   
-    logger.info("/hello, name : " + name + ", port : " + port);
+  @RequestMapping("/hello")
+  public String hello() {
+    logger.info("/hello, port : " + port);
+    
+    return "Spring Cloud Project : Feign, port : " + port;
+  }
+
+ 
+  
+  @RequestMapping(value = "/hello1", method = RequestMethod.GET)
+  public String hello(@RequestParam(value="name", defaultValue="Feign") String name) {
+    logger.info("/hello1  port : " + port +", name : " + name);
  
     return "Spring Cloud Project => " + name + " , port : " + port;
   }
 
+
+  
+  @RequestMapping(value = "/hello2", method = RequestMethod.GET)
+  public User hello(@RequestHeader String name, @RequestHeader Integer age) {
+    logger.info("/hello2  port : " + port +", name : " + name + ", age " + age);
+    
+    return new User(name, age); 
+  }
+  
+  
+  
+  @RequestMapping(value = "/hello3", method = RequestMethod.POST)
+  public String hello(@RequestBody User user) {
+    logger.info("/hello3  port : " + port +", name : " + user.getName() + ", age " + user.getAge());
+    
+    return "Hello " + user.getName() + ", " + user.getAge();
+  }
+  
+  
 }

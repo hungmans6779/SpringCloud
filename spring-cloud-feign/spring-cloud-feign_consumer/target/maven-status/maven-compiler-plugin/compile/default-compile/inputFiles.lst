@@ -1,3 +1,5 @@
 D:\Spring_Works\Projects\SpringCloud\spring-cloud-feign\spring-cloud-feign_consumer\src\main\java\com\spring\cloud\feign\consumer\SpringCloudFeignConsumerApplication.java
-D:\Spring_Works\Projects\SpringCloud\spring-cloud-feign\spring-cloud-feign_consumer\src\main\java\com\spring\cloud\feign\consumer\controller\ConsumerController.java
 D:\Spring_Works\Projects\SpringCloud\spring-cloud-feign\spring-cloud-feign_consumer\src\main\java\com\spring\cloud\feign\consumer\service\HelloService.java
+D:\Spring_Works\Projects\SpringCloud\spring-cloud-feign\spring-cloud-feign_consumer\src\main\java\com\spring\cloud\feign\consumer\controller\ConsumerV2Controller.java
+D:\Spring_Works\Projects\SpringCloud\spring-cloud-feign\spring-cloud-feign_consumer\src\main\java\com\spring\cloud\feign\consumer\pojo\User.java
+D:\Spring_Works\Projects\SpringCloud\spring-cloud-feign\spring-cloud-feign_consumer\src\main\java\com\spring\cloud\feign\consumer\controller\ConsumerV1Controller.java
