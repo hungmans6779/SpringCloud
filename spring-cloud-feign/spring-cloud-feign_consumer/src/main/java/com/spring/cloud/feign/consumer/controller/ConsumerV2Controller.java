@@ -53,7 +53,7 @@ public class ConsumerV2Controller {
     StringBuilder sb = new StringBuilder();
     sb.append(helloService.hello()).append("\n");
     sb.append(helloService.hello("KEVIN")).append("\n");
-    sb.append(helloService.hello("測試員",18)).append("\n");
+    sb.append(helloService.hello("KK",18)).append("\n");
     sb.append(helloService.hello(new User("富邦人",60))).append("\n");
     
     return sb.toString();

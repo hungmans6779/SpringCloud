@@ -84,7 +84,6 @@ public class User {
 	 *
 	 * @return the string
 	 */
-	@Override
 	public String toString() {
 		return "/hello2,  name : " + name + ", age " + age;
 	}

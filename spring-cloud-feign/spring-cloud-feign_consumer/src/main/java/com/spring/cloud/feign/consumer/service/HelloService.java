@@ -22,6 +22,7 @@
 package com.spring.cloud.feign.consumer.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
+
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,55 +32,49 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.spring.cloud.feign.consumer.pojo.User;
 
 /**
- * <pre> HelloService, TODO: add Class Javadoc here. </pre>
+ * <pre>
+ *  HelloService, TODO: add Class Javadoc here.
+ * </pre>
  *
  * @author chiahung.hung
  */
 @FeignClient("HELLO-SERVICE")
 public interface HelloService {
-  
-  
-  /**
-   * Hello.
-   *
-   * @return the string
-   */
-  @RequestMapping("/hello")
-  public String hello();
- 
 
-  
-  /**
-   * Hello.
-   *
-   * @param name the name
-   * @return the string
-   */
-  @RequestMapping(value = "/hello1", method = RequestMethod.GET)
-  public String hello(@RequestParam(value="name", defaultValue="Feign") String name);
-  
-  
-  
-  /**
-   * Hello.
-   *
-   * @param name the name
-   * @param age the age
-   * @return the user
-   */
-  @RequestMapping(value = "/hello2", method = RequestMethod.GET)
-  public User hello(@RequestHeader String name, @RequestHeader Integer age);
-  
-  
-  
-  /**
-   * Hello.
-   *
-   * @param user the user
-   * @return the string
-   */
-  @RequestMapping(value = "/hello3", method = RequestMethod.POST)
-  public String hello(@RequestBody User user);
-  
-  
+	/**
+	 * Hello.
+	 *
+	 * @return the string
+	 */
+	@RequestMapping("/hello")
+	public String hello();
+
+	/**
+	 * Hello.
+	 *
+	 * @param name the name
+	 * @return the string
+	 */
+	@RequestMapping(value = "/hello1", method = RequestMethod.GET)
+	public String hello(@RequestParam(value = "name", defaultValue = "Feign") String name);
+
+	/**
+	 * Hello.
+	 *
+	 * @param name the name
+	 * @param age  the age
+	 * @return the user
+	 */
+	@RequestMapping(value = "/hello2", method = RequestMethod.GET)
+	public User hello(@RequestHeader String name, @RequestHeader Integer age);
+
+	/**
+	 * Hello.
+	 *
+	 * @param user the user
+	 * @return the string
+	 */
+	@RequestMapping(value = "/hello3", method = RequestMethod.POST)
+	public String hello(@RequestBody User user);
+
 }
