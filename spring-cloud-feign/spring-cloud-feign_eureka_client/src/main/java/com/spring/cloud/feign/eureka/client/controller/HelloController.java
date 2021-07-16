@@ -23,6 +23,7 @@
 package com.spring.cloud.feign.eureka.client.controller;
 
 import org.jboss.logging.Logger;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -31,7 +32,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.spring.cloud.feign.eureka.client.pojo.User;
+import com.spring.cloud.feign.api.dto.User;
+
+
+
+
+
+
 
 // TODO: Auto-generated Javadoc
 /**
@@ -90,7 +97,7 @@ public class HelloController {
    * @return the user
    */
   @RequestMapping(value = "/hello2", method = RequestMethod.GET)
-  public User hello(@RequestHeader String name, @RequestHeader Integer age) {
+  public com.spring.cloud.feign.api.dto.User hello(@RequestHeader String name, @RequestHeader Integer age) {
     
     logger.info("/hello2,  port : " + port + ", name : " + name + ", age " + age);
     
@@ -106,7 +113,7 @@ public class HelloController {
    * @return the string
    */
   @RequestMapping(value = "/hello3", method = RequestMethod.POST)
-  public String hello(@RequestBody User user) {
+  public String hello(@RequestBody com.spring.cloud.feign.api.dto.User user) {
     
     logger.info("/hello3,  port : " + port + ", name : " + user.getName() + ", age " + user.getAge());
     

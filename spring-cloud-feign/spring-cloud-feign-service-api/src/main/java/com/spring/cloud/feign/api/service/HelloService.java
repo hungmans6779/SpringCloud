@@ -19,9 +19,7 @@
  *  from KK Owner Co., Ltd.
  *  </pre>
  */
-package com.spring.cloud.feign.consumer.service;
-
-import org.springframework.cloud.openfeign.FeignClient;
+package com.spring.cloud.feign.api.service;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -29,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.spring.cloud.feign.consumer.pojo.User;
+import com.spring.cloud.feign.api.dto.User;
 
 /**
  * <pre>
@@ -38,16 +36,8 @@ import com.spring.cloud.feign.consumer.pojo.User;
  *
  * @author chiahung.hung
  */
-@FeignClient("HELLO-SERVICE")
+@RequestMapping("/refactor")
 public interface HelloService {
-
-	/**
-	 * Hello.
-	 *
-	 * @return the string
-	 */
-	@RequestMapping("/hello")
-	public String hello();
 
 	/**
 	 * Hello.
@@ -55,7 +45,7 @@ public interface HelloService {
 	 * @param name the name
 	 * @return the string
 	 */
-	@RequestMapping(value = "/hello1", method = RequestMethod.GET)
+	@RequestMapping(value = "/hello5", method = RequestMethod.GET)
 	public String hello(@RequestParam(value = "name", defaultValue = "Feign") String name);
 
 	/**
@@ -65,7 +55,7 @@ public interface HelloService {
 	 * @param age  the age
 	 * @return the user
 	 */
-	@RequestMapping(value = "/hello2", method = RequestMethod.GET)
+	@RequestMapping(value = "/hello6", method = RequestMethod.GET)
 	public User hello(@RequestHeader("name") String name, @RequestHeader("age") Integer age);
 
 	/**
@@ -74,7 +64,8 @@ public interface HelloService {
 	 * @param user the user
 	 * @return the string
 	 */
-	@RequestMapping(value = "/hello3", method = RequestMethod.POST)
+	@RequestMapping(value = "/hello7", method = RequestMethod.POST)
 	public String hello(@RequestBody User user);
 
+	
 }

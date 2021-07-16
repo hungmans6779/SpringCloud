@@ -35,6 +35,7 @@
 
 	<!-- 子 Module -->
 	<modules>
+		<module>spring-cloud-feign-service-api</module>
 		<module>spring-cloud-feign_eureka_server</module>
 		<module>spring-cloud-feign_eureka_client</module>
 		<module>spring-cloud-feign_consumer</module>
@@ -44,6 +45,13 @@
 	<dependencyManagement>
 
 		<dependencies>
+
+			<!-- 子 Module (統一由這裡控制版本) -->
+			<dependency>
+				<groupId>com.spring.cloud.feign.service.api</groupId>
+				<artifactId>spring-cloud-feign-service-api</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
 
 			<!-- 子 Module (統一由這裡控制版本) -->
 			<dependency>
@@ -127,13 +135,13 @@
 			<optional>true</optional>
 		</dependency>
 
-        <!-- Maven 的 plugin -->
+		<!-- Maven 的 plugin -->
 		<dependency>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-resources-plugin</artifactId>
 			<version>3.2.0</version>
 		</dependency>
-		
+
 	</dependencies>
 
 

@@ -19,8 +19,8 @@
 	<!-- 基本信息 -->
 	<name>spring-cloud-feign_consumer</name>
 	<description>consumer</description>
-	
-	
+
+
 	<dependencies>
 
 		<!-- Spring Cloud Eureka Client (客戶端) -->
@@ -29,13 +29,20 @@
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
-	    <!-- Spring Cloud Feign -->
+		<!-- Spring Cloud Feign -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-feign</artifactId>
 			<version>1.4.7.RELEASE</version>
 		</dependency>
-		
+
+		<!-- 自定義 Project : spring-cloud-feign-service-api -->
+		<dependency>
+			<groupId>com.spring.cloud.feign.service.api</groupId>
+			<artifactId>spring-cloud-feign-service-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 	</dependencies>
-	
+
 </project>

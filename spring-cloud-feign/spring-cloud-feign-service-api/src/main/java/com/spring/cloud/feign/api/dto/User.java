@@ -20,7 +20,7 @@
  *  from KK Owner Co., Ltd.
  *  </pre>
  */
-package com.spring.cloud.feign.eureka.client.pojo;
+package com.spring.cloud.feign.api.dto;
 
 /**
  * <pre>
@@ -37,6 +37,12 @@ public class User {
 	/** The age. */
 	private Integer age;
 
+	/**
+	 * Instantiates a new user.
+	 *
+	 * @param name the name
+	 * @param age  the age
+	 */
 	public User(String name, Integer age) {
 		super();
 		this.name = name;
