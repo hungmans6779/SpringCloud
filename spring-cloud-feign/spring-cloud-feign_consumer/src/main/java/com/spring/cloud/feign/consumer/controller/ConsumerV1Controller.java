@@ -1,9 +1,9 @@
 /**
  * KK Owner CONFIDENTIAL
- * @Package:  com.spring.cloud.hystrix.ribbon.controller
- * @FileName: ConsumerController.java
+ * @Package:  com.spring.cloud.feign.consumer.controller
+ * @FileName: ConsumerV1Controller.java
  * @author:   chiahung.hung
- * @date:     2020年12月11日, 下午3:38:13
+ * @date:     2021/7/16, 上午 08:24:27
  * 
  * <pre>
  *  Copyright 2013-2014 The KK Owner Co., Ltd. all rights reserved.
@@ -44,6 +44,7 @@ import com.spring.cloud.feign.consumer.service.HelloService;
 @RequestMapping("/v1")
 public class ConsumerV1Controller {
 
+  /** The hello service. */
   @Autowired
   private HelloService helloService;
   
@@ -52,25 +53,48 @@ public class ConsumerV1Controller {
    * Hello consumer.
    *
    * @return the string
+   * @throws Exception the exception
    */
   @RequestMapping("/feign-consumer-hello")
   public String helloConsumer() throws Exception {
     return helloService.hello();
   }
   
+  
  
+  /**
+   * Hello consumer.
+   *
+   * @param name the name
+   * @return the string
+   */
   @RequestMapping(value="/feign-consumer-hello1", method = RequestMethod.GET)
   public String helloConsumer(@RequestParam(value="name", defaultValue="Feign") String name)  {
     return helloService.hello(name);
   }
   
   
+  
+  /**
+   * Hello consumer.
+   *
+   * @param name the name
+   * @param age the age
+   * @return the user
+   */
   @RequestMapping(value="/feign-consumer-hello2", method = RequestMethod.GET)
   public User helloConsumer(@RequestHeader("name") String name, @RequestHeader("age") Integer age) {
     return helloService.hello(name, age);
   }
   
   
+  
+  /**
+   * Hello consumer.
+   *
+   * @param user the user
+   * @return the string
+   */
   @RequestMapping(value="/feign-consumer-hello3", method = RequestMethod.POST)
   public String helloConsumer(@RequestBody User user) {
     return helloService.hello(user);

@@ -22,33 +22,41 @@
  */
 package com.spring.cloud.feign.eureka.client.pojo;
 
+// TODO: Auto-generated Javadoc
 /**
  * <pre> User, TODO: add Class Javadoc here. </pre>
  *
  * @author chiahung.hung
  */
 public class User {
-  
+
+
   /** The name. */
   private String name;
-  
+
   /** The age. */
   private Integer age;
 
+  /**
+   * Instantiates a new user.
+   *
+   * @param name the name
+   * @param age the age
+   */
   public User(String name, Integer age) {
     super();
     this.name = name;
     this.age = age;
   }
 
-  
+
   /**
    * Gets the name.
    *
    * @return the name
    */
   public String getName() {
-      return name;
+    return name;
   }
 
   /**
@@ -57,7 +65,7 @@ public class User {
    * @param name the new name
    */
   public void setName(String name) {
-      this.name = name;
+    this.name = name;
   }
 
   /**
@@ -66,7 +74,7 @@ public class User {
    * @return the age
    */
   public Integer getAge() {
-      return age;
+    return age;
   }
 
   /**
@@ -75,7 +83,7 @@ public class User {
    * @param age the new age
    */
   public void setAge(Integer age) {
-      this.age = age;
+    this.age = age;
   }
 
   /**
@@ -85,7 +93,8 @@ public class User {
    */
   @Override
   public String toString() {
-      return "/hello2,  name : " + name + ", age " + age;
+    return "/hello2,  name : " + name + ", age " + age;
   }
+
 
 }

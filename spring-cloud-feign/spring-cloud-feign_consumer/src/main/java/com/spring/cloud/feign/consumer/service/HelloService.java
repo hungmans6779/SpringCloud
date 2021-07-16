@@ -1,12 +1,11 @@
 /**
- * KK Owner CONFIDENTIAL/
- * 
- * @Package: com.spring.cloud.hystrix.ribbon.service
+ * KK Owner CONFIDENTIAL
+ * @Package:  com.spring.cloud.feign.consumer.service
  * @FileName: HelloService.java
- * @author: chiahung.hung
- * @date: 2020年12月29日, 下午3:23:02
+ * @author:   chiahung.hung
+ * @date:     2021/7/16, 上午 08:25:19
  * 
- *        <pre>
+ * <pre>
  *  Copyright 2013-2014 The KK Owner Co., Ltd. all rights reserved.
  *
  *  NOTICE:  All information contained herein is, and remains
@@ -31,31 +30,54 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.spring.cloud.feign.consumer.pojo.User;
 
-
-
-
-
-
 /**
  * <pre> HelloService, TODO: add Class Javadoc here. </pre>
  *
  * @author chiahung.hung
  */
-@FeignClient("hello-service")
+@FeignClient("HELLO-SERVICE")
 public interface HelloService {
   
+  
+  /**
+   * Hello.
+   *
+   * @return the string
+   */
   @RequestMapping("/hello")
   public String hello();
  
+
   
+  /**
+   * Hello.
+   *
+   * @param name the name
+   * @return the string
+   */
   @RequestMapping(value = "/hello1", method = RequestMethod.GET)
   public String hello(@RequestParam(value="name", defaultValue="Feign") String name);
   
   
+  
+  /**
+   * Hello.
+   *
+   * @param name the name
+   * @param age the age
+   * @return the user
+   */
   @RequestMapping(value = "/hello2", method = RequestMethod.GET)
   public User hello(@RequestHeader String name, @RequestHeader Integer age);
   
   
+  
+  /**
+   * Hello.
+   *
+   * @param user the user
+   * @return the string
+   */
   @RequestMapping(value = "/hello3", method = RequestMethod.POST)
   public String hello(@RequestBody User user);
   

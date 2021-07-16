@@ -1,9 +1,9 @@
 /**
  * KK Owner CONFIDENTIAL
- * @Package:  com.spring.cloud.hystrix.ribbon.controller
- * @FileName: ConsumerController.java
+ * @Package:  com.spring.cloud.feign.consumer.controller
+ * @FileName: ConsumerV2Controller.java
  * @author:   chiahung.hung
- * @date:     2020年12月11日, 下午3:38:13
+ * @date:     2021/7/16, 上午 08:24:34
  * 
  * <pre>
  *  Copyright 2013-2014 The KK Owner Co., Ltd. all rights reserved.
@@ -38,10 +38,16 @@ import com.spring.cloud.feign.consumer.service.HelloService;
 @RequestMapping("/v2")
 public class ConsumerV2Controller {
 
+  /** The hello service. */
   @Autowired
   private HelloService helloService;
     
-  @RequestMapping(value="/feign-consumer", method = RequestMethod.GET)
+  /**
+   * Hello consumer.
+   *
+   * @return the string
+   */
+  @RequestMapping(value="/feign-consumer-hello4", method = RequestMethod.GET)
   public String helloConsumer() {
     
     StringBuilder sb = new StringBuilder();
@@ -53,5 +59,4 @@ public class ConsumerV2Controller {
     return sb.toString();
   }  
    
-  
 }

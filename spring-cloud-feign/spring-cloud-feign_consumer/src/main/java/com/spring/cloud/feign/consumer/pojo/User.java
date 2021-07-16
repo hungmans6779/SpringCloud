@@ -23,60 +23,70 @@
 package com.spring.cloud.feign.consumer.pojo;
 
 /**
- * <pre> User, TODO: add Class Javadoc here. </pre>
+ * <pre>
+ *  User, TODO: add Class Javadoc here.
+ * </pre>
  *
  * @author chiahung.hung
  */
 public class User {
-  
-  /** The name. */
-  private String name;
-  
-  /** The age. */
-  private Integer age;
 
-  public User(String name, Integer age) {
-    super();
-    this.name = name;
-    this.age = age;
-  }
+	/** The name. */
+	private String name;
 
-  
-  /**
-   * Gets the name.
-   *
-   * @return the name
-   */
-  public String getName() {
-      return name;
-  }
+	/** The age. */
+	private Integer age;
 
-  /**
-   * Sets the name.
-   *
-   * @param name the new name
-   */
-  public void setName(String name) {
-      this.name = name;
-  }
+	public User(String name, Integer age) {
+		super();
+		this.name = name;
+		this.age = age;
+	}
 
-  /**
-   * Gets the age.
-   *
-   * @return the age
-   */
-  public Integer getAge() {
-      return age;
-  }
+	/**
+	 * Gets the name.
+	 *
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
 
-  /**
-   * Sets the age.
-   *
-   * @param age the new age
-   */
-  public void setAge(Integer age) {
-      this.age = age;
-  }
+	/**
+	 * Sets the name.
+	 *
+	 * @param name the new name
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
 
+	/**
+	 * Gets the age.
+	 *
+	 * @return the age
+	 */
+	public Integer getAge() {
+		return age;
+	}
+
+	/**
+	 * Sets the age.
+	 *
+	 * @param age the new age
+	 */
+	public void setAge(Integer age) {
+		this.age = age;
+	}
+
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
+	@Override
+	public String toString() {
+		return "/hello2,  name : " + name + ", age " + age;
+	}
 
 }

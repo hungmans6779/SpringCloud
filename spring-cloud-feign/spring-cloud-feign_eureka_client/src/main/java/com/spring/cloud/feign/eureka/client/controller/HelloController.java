@@ -33,6 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.cloud.feign.eureka.client.pojo.User;
 
+// TODO: Auto-generated Javadoc
 /**
  * <pre> HelloController, TODO: add Class Javadoc here. </pre>
  *
@@ -50,8 +51,14 @@ public class HelloController {
   private String port;
 
   
+  /**
+   * Hello.
+   *
+   * @return the string
+   */
   @RequestMapping("/hello")
   public String hello() {
+    
     logger.info("/hello, port : " + port);
     
     return "/hello, port : " + port;
@@ -59,8 +66,15 @@ public class HelloController {
 
  
   
+  /**
+   * Hello.
+   *
+   * @param name the name
+   * @return the string
+   */
   @RequestMapping(value = "/hello1", method = RequestMethod.GET)
   public String hello(@RequestParam(value="name", defaultValue="Feign") String name) {
+    
     logger.info("/hello1,  port : " + port + ", name : " + name);
  
     return "/hello1,  port : " + port + ", name : " + name;
@@ -68,8 +82,16 @@ public class HelloController {
 
 
   
+  /**
+   * Hello.
+   *
+   * @param name the name
+   * @param age the age
+   * @return the user
+   */
   @RequestMapping(value = "/hello2", method = RequestMethod.GET)
   public User hello(@RequestHeader String name, @RequestHeader Integer age) {
+    
     logger.info("/hello2,  port : " + port + ", name : " + name + ", age " + age);
     
     return new User(name, age); 
@@ -77,8 +99,15 @@ public class HelloController {
   
   
   
+  /**
+   * Hello.
+   *
+   * @param user the user
+   * @return the string
+   */
   @RequestMapping(value = "/hello3", method = RequestMethod.POST)
   public String hello(@RequestBody User user) {
+    
     logger.info("/hello3,  port : " + port + ", name : " + user.getName() + ", age " + user.getAge());
     
     return "/hello3,  port : " + port + ", name : " + user.getName() + ", age " + user.getAge();
