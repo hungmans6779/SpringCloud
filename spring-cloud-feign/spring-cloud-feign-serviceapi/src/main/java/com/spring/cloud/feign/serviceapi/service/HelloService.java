@@ -46,7 +46,7 @@ public interface HelloService {
 	 * @param name the name
 	 * @return the string
 	 */
-	@RequestMapping(value = "/hello5", method = RequestMethod.GET)
+	@RequestMapping(value = "/hello4", method = RequestMethod.GET)
 	public String hello(@RequestParam(value = "name", defaultValue = "Feign") String name);
 
 	/**
@@ -56,7 +56,7 @@ public interface HelloService {
 	 * @param age  the age
 	 * @return the user
 	 */
-	@RequestMapping(value = "/hello6", method = RequestMethod.GET)
+	@RequestMapping(value = "/hello5", method = RequestMethod.GET)
 	public User hello(@RequestHeader("name") String name, @RequestHeader("age") Integer age);
 
 	/**
@@ -65,7 +65,7 @@ public interface HelloService {
 	 * @param user the user
 	 * @return the string
 	 */
-	@RequestMapping(value = "/hello7", method = RequestMethod.POST)
+	@RequestMapping(value = "/hello6", method = RequestMethod.POST)
 	public String hello(@RequestBody User user);
 
 	
