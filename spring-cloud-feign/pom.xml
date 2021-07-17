@@ -35,7 +35,7 @@
 
 	<!-- 子 Module -->
 	<modules>
-		<module>spring-cloud-feign-service-api</module>
+		<module>spring-cloud-feign-serviceapi</module>
 		<module>spring-cloud-feign_eureka_server</module>
 		<module>spring-cloud-feign_eureka_client</module>
 		<module>spring-cloud-feign_consumer</module>
@@ -48,8 +48,8 @@
 
 			<!-- 子 Module (統一由這裡控制版本) -->
 			<dependency>
-				<groupId>com.spring.cloud.feign.service.api</groupId>
-				<artifactId>spring-cloud-feign-service-api</artifactId>
+				<groupId>com.spring.cloud.feign.serviceapi</groupId>
+				<artifactId>spring-cloud-feign-serviceapi</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 

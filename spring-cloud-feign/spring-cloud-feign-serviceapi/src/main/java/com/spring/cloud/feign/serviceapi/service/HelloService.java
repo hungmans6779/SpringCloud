@@ -19,7 +19,7 @@
  *  from KK Owner Co., Ltd.
  *  </pre>
  */
-package com.spring.cloud.feign.api.service;
+package com.spring.cloud.feign.serviceapi.service;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -27,7 +27,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.spring.cloud.feign.api.dto.User;
+import com.spring.cloud.feign.serviceapi.dto.User;
+
 
 /**
  * <pre>

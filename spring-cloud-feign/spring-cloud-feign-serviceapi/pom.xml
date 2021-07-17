@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -12,12 +12,12 @@
 	</parent>
 
 	<!-- 項目說明 -->
-	<groupId>com.spring.cloud.feign.service.api</groupId>
-	<artifactId>spring-cloud-feign-service-api</artifactId>
+	<groupId>com.spring.cloud.feign.serviceapi</groupId>
+	<artifactId>spring-cloud-feign-serviceapi</artifactId>
 	<packaging>jar</packaging>
 
 	<!-- 基本信息 -->
-	<name>spring-cloud-feign-service-api</name>
-	<description>service-api</description>
+	<name>spring-cloud-feign-serviceapi</name>
+	<description>serviceapi</description>
 
 </project>

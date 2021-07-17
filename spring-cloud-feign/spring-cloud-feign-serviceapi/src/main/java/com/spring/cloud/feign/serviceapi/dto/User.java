@@ -20,7 +20,7 @@
  *  from KK Owner Co., Ltd.
  *  </pre>
  */
-package com.spring.cloud.feign.api.dto;
+package com.spring.cloud.feign.serviceapi.dto;
 
 /**
  * <pre>
