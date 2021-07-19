@@ -20,7 +20,6 @@
  *  </pre>
  */
 package spring.cloud.feign.consumer.controller;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 
