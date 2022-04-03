@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: HackerK
+Build-Jdk: 17.0.2
+Implementation-Title: spring-boot-admin (Server)
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.spring.boot.admin
+Implementation-URL: http://admin-server:8080
+Created-By: Maven Integration for Eclipse
+
