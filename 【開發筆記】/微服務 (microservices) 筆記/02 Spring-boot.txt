@@ -1,0 +1,331 @@
+﻿★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+【Spring Boot 自動產生範例】
+ 
+ Spring Initializr
+ https://start.spring.io/
+
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+【增加 Maven Repo Archetypes】
+  
+  Preferences => 《Maven》
+  『Archetypes』的 Add Remote Catalog
+ 
+  增加下面的資訊
+  
+  Catalog File => https://repo.maven.apache.org/maven2/archetype-catalog.xml
+  Description  => Other_Maven_repository
+ 
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+YAML (Yet Another Markup Language) 仍是一種標記語言
+
+比較適合階層式 (hierarchical model) 的資料結構，不過也有精緻的語法可以表示連結性 (relational model) 的資料。
+由於 YAML 使用空白符號和分行來分隔資料，
+它特別適合 grep / Python / Perl / Ruby 操作。
+
+ ※ YAML 目前還有一些不足，它無法透過 @PropertySource 註釋來載入設定
+
+application.properties
+springTest.date=201903201930
+
+
+
+【properties 設定方式】
+ 
+ environments.dev.url=http://dev.bar.com
+ environments.dev.name=Developer Setup
+ environments.prod.url=http://foo.bar.com
+ environments.prod.name=My Cool App
+
+
+
+【YAML 設定方式】
+ 
+ environments:
+    dev:
+      url : http://dev.bar.com
+      name : Developer Setup
+    prod: 
+      url : http://foo.bar.com
+      name : My Cool App
+
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+【刪除 8080】
+
+1、首先查找到占用 8080 端口的进程号PID是多少
+
+   :\> netstat -ano | findstr 8080
+        TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING       14364   <-- 此為要 kill 的 PID
+        TCP    0.0.0.0:18080          0.0.0.0:0              LISTENING       3912
+        TCP    127.0.0.1:8080         127.0.0.1:52520        TIME_WAIT       0
+        TCP    [::]:8080              [::]:0                 LISTENING       14364
+        TCP    [::]:18080             [::]:0                 LISTENING       3912
+ 
+
+2、kill 掉這個進程
+
+   :\>taskkill /F /PID 14364
+   成功: 處理程序 PID 14364 已經終止了。
+
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+直接指定要起 的 PORT
+
+> java -jar hello-0.0.1-SNAPSHOT.jar --server.port=8001
+
+  Chrome 開啟下列的網址 
+  http://localhost:8001/hello
+
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+【多環境設定】
+
+新增 application-xxxx.properties
+ ex. application-dev.properties
+
+  透過 application.properties 環境變數指到對應的 application-xxxx.properties
+   ex. spring.profiles.active=dev  
+       結果就會指到 application-dev.properties
+
+
+  參考範例：
+  D:\Spring_Works\【批次】\spring-boot hello\第 2 種方式
+
+
+1.   application.properties
+     spring.profiles.active=dev
+
+2-1. 開發環境 (dev)
+     application-dev.properties
+     server.port=8080
+
+3-2. 測試環境 (test)
+     application-test.properties
+     server.port=8180
+
+4-3. 生產環境 (prod)
+     application-prod.properties
+     server.port=8280
+
+
+    【執行方式】
+
+     執行 預設的開發環境 (dev) port=8080
+     java -jar hello-0.0.1-SNAPSHOT.jar
+          
+     執行 開發環境 (dev) port=8080
+     java -jar hello-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
+
+     執行 開發環境 (test) port=8180
+     java -jar hello-0.0.1-SNAPSHOT.jar --spring.profiles.active=test
+    
+     執行 開發環境 (prod) port=8280
+     java -jar hello-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod
+            
+            
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+【Spring Boot Admin】   
+   
+ 參閱文章：(公司擋掉了)
+ https://www.jianshu.com/p/393054dd9c7e
+
+ Spring Boot Admin 是一個管理和監控 Spring Boot 應用程序的開源軟件。
+ 每個應用都認為是一個客戶端，通過 HTTP 或者使用 Eureka 註冊到 admin server 中進行展示，
+ Spring Boot Admin UI 部分使用 AngularJs 將數據展示在前端。
+ 
+ http://www.ityouknow.com/springboot/2018/02/11/spring-boot-admin.html
+  
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+【spring-boot-starter-actuator】 監控端點
+
+ 參閱文章：
+ http://blog.didispace.com/spring-boot-actuator-1/
+
+
+   <!-- 監控端點 (包含 環境變數、垃圾收集資訊、記憶體資訊、執行緒池資訊 ...) -->
+	 <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+	 </dependency>
+
+
+   原生端點是在應用程序裡提供眾多 Web 接口，通過它們了解應用程序運行時的內部狀況。
+   原生端點又可以分成三類：
+   
+   1.《應用設定類別》：取得應用程式中載入的應用設定、環境變數、自動化設定報告等與 Spring Boot 應用密切相關的設定類別資訊。
+   2.《度量指標類別》：取得應用程式執行過程中用於監控的度量指標，例如記憶體資訊、執行緒池資訊、HTTP 請求統計等。  
+   3.《操作控制類別》：提供了對應用的關閉等操作類別。
+
+
+   【三個類別的細部說明】
+   
+   
+   1.《應用設定類別》：取得應用程式中載入的應用設定、環境變數、自動化設定報告等與 Spring Boot 應用密切相關的設定類別資訊。
+                       可以查看應用在運行期的靜態信息：例如自動配置信息、加載的 springbean 信息、yml 文件配置信息、環境信息、請求映射信息。
+
+     (01) /autoconfig : 該端點用來取得應用的自動化設定報告，其中包含所有自動化設定的選項。
+          http://127.0.0.1:8080/autoconfig
+
+          positiveMatches 返回的是條件匹配成功的自動化配置
+          negativeMatches 返回的是條件匹配不成功的自動化配置
+
+
+     (02) /beans : 該端點用來取得應用上下文中創建的所有 Bean。
+
+           {
+                "bean": "helloController",
+                "scope": "singleton",
+                "type": "com.spring.hello.web.HelloController",
+                "resource": "file [d:/Spring_Works/Projects/spring-boot/hello/target/classes/com/spring/hello/web/HelloController.class]",
+                "dependencies": []
+           },        
+    
+           每個 Bean 中都包含了下面這些資訊
+           bean        ：Bean 的名稱
+           scope       ：Bean 的作用域
+           type        ：Bean 的 Java 類型
+           reource     ：class 文件的具體路徑
+           dependencies：依賴的 Bean 名稱
+           
+
+     (03) /configprops：該端點用來獲取應用中配置的屬性信息報告。
+                        描述配置屬性(包含默認值)如何注入 Bean
+        
+          下面該端點返回示例的片段中，我們看到返回了關於該短信的配置信息，
+          
+          prefix 屬性代表了屬性的配置前綴，
+          properties 代表了各個屬性的名稱和值。
+          
+          所以，我們可以通過該報告來看到各個屬性的配置路徑，
+          比如我們要關閉該端點，就可以通過使用 endpoints.configprops.enabled=false 來完成設置。
+     
+          
+          "configurationPropertiesReportEndpoint": {
+            "prefix": "endpoints.configprops",
+               "properties": {
+                  "id": "configprops",
+                  "sensitive": true,
+                  "enabled": true
+               }
+          },
+    
+    
+     (04) /env：該端點與/configprops不同，它用來取得應用所有可用的環境屬性報告。
+                包括：環境變量、JVM屬性、應用的配置配置、命令行中的參數。
+                從下面該端點返回的示例片段中，我們可以看到它不僅返回了應用的配置屬性，還返回了系統屬性、環境變量等豐富的配置信息，
+                其中也包括了應用還沒有沒有使用的配置。所以它可以幫助我們方便地看到當前應用可以加載的配置信息，
+                並配合@ConfigurationProperties註解將它們引入到我們的應用程序中來進行使用。
+                另外，為了配置屬性的安全，對於一些類似密碼等敏感信息，該端點都會進行隱私保護，
+                但是我們需要讓屬性名中包含：password、secret、key 這些關鍵詞，這樣該端點在返回它們的時候會使用*來替代實際的屬性值。
+     
+     
+     (05) /mappings：該端點傳回所有 Spring MVC 的控制器映射關係報告。
+                     從下面的範例片段中，我們可以看該報告的信息與我們在啟用 Spring MVC 的 Web 應用時輸出的記錄檔資訊類似
+                     
+                     bean   屬性標識 該映射關係的請求處理器
+                     method 屬性標識 該映射關係的具體處理類和處理函數
+
+                    {
+                        ...
+                        "{[/hello]}": {
+                            "bean": "requestMappingHandlerMapping",
+                            "method": "public java.lang.String com.spring.hello.web.HelloController.index()"
+                        },
+                       ...
+                    }
+
+
+     (06) /info：該端點用來返回一些應用自定義的信息。
+                 默認情況下，該端點只會返回一個空的 JSON 內容。
+                 我們可以在 application.properties 設定檔中通過 info 字首來設定一些屬性，
+                 比如下面這樣：
+     
+                 info.app.name=spring-boot-hello
+                 info.app.version=v1.0.0
+
+     
+     
+     
+     
+     
+
+   2.《度量指標類別》：取得應用程式執行過程中用於監控的度量指標，例如記憶體資訊、執行緒池資訊、HTTP 請求統計等。
+                       主要是運行期的動態信息，例如堆棧、請求連、一些健康指標、metrics 信息等；
+   
+     
+                       度量指標類端點提供的報告內容則是動態變化的，這些端點提供了應用程序在運行過程中的一些快照信息，
+                       比如：內存使用情況、HTTP 請求統計、外部資源指標等。這些端點對於我們構建微服務架構中的監控系統非常有幫助，
+                       由於 Spring Boot 應用自身實現了這些端點，所以我們可以很方便地利用它們來收集我們想要的信息，以製定出各種自動化策略。
+                       下面，我們就來分別看看這些強大的端點功能。
+    
+    
+     (01) /metrics：該端點用來返回當前應用的各類重要度量指標，比如：記憶體資訊、執行緒訊息、垃圾回收資訊等。
+                    系統信息：包括處理器數量 processors、運行時間 uptime 和 instance.uptime、系統平均負載 systemload.average。
+                    
+                    mem.*         ：內存概要信息，包括分配給應用的總內存數量以及當前空閒的內存數量。
+                    heap.*        ：堆內存使用情況。
+                    nonheap.*     ：非堆內存使用情況。
+                    threads.*     ：線程使用情況，包括線程數、守護線程數（daemon）、線程峰值（peak）等。
+                    classes.*     ：應用加載和卸載的類統計。
+                    gc.*          ：垃圾收集器的詳細信息，
+                                    垃圾回收次數 gc.ps_scavenge.count、
+                                    垃圾回收消耗時間 gc.ps_scavenge.time、
+                                    標記-清除算法的次數 gc.ps_marksweep.count、
+                                    標記-清除算法的消耗時間 gc.ps_marksweep.time。 
+                    httpsessions.*：Tomcat容器的會話使用情況。包括最大會話數httpsessions.max和活躍會話數httpsessions.active。
+                    gauge.*       ：HTTP 請求的性能指標之一，它主要用來反映一個絕對數值。
+                                    gauge.response.hello: 5，它表示上一次hello請求的延遲時間為5毫秒。
+                    counter.*     ：HTTP 請求的性能指標之一，它主要作為計數器來使用，記錄了增加量和減少量。
+                                    counter.status.200.hello: 11，它代表了hello請求返回 200狀態的 次數為 11。
+                                    
+                    對於 gauge.* 和 counter.* 的統計，這裡有一個特殊的內容請求 star-star，它代表了對靜態資源的訪問。
+                    這兩類度量指標非常有用，我們不僅可以使用它默認的統計指標，還可以在程序中輕鬆的增加自定義統計值。
+                    只需要通過注入org.springframework.boot.actuate.metrics.CounterService 和 org.springframework.boot.actuate.metrics.GaugeService 
+                    來實現自定義的統計指標信息。比如：我們可以像下面這樣自定義實現對hello接口的訪問次數統計。
+
+
+
+
+     (02) /health：該端點在一開始的示例中我們已經使用過了，它用來獲取應用的各類健康指標信息。
+                   在 spring-boot-starter-actuator 模組中附帶實現了一些常用資源的健康指標檢測器。
+                   這些檢測器都通過 HealthIndicator 接口實現，並且會根據依賴關係的引入實現自動化裝配，
+          
+                   DiskSpaceHealthIndicator   低磁碟空間檢測
+                   DataSourceHealthIndicator  檢測 DataSource 的連接是否可用
+                   MongoHealthIndicator       檢測 Mongo 資料庫是否可用
+                   RabbitHealthIndicator      檢測 Rabbit 伺服器是否可用
+                   RedisHealthIndicator       檢測 Redis 伺服器是否可用
+                   SolrHealthIndicator        檢測 Solr 伺服器是否可用
+          
+          
+          
+     (03) /dump：該端點用來曝露程式執行中的執行緒資訊。
+                 它使用 java.lang.management.ThreadMXBean的 dumpAllThreads 方法來返回所有含有同步信息的活動執行緒詳情。
+     
+     
+     (04) /trace：該端點用來返回基本的 HTTP 追蹤資訊。
+                  預設情況下，追蹤信息的存儲採用 org.springframework.boot.actuate.trace.InMemoryTraceRepository 實現的記憶體方式，
+                  始終保留最近的100條請求記錄。    
+     
+          
+
+
+
+
+   3.《操作控制類別》：提供了對應用的關閉等操作類別。
+                       主要是指 shutdown, 用戶可以發送一個請求將應用的監控功能關閉。
+
+
+                       仔細的讀者可能會發現，我們在“初識 Actuator”時運行示例的控制台中輸出的所有監控端點，
+                       已經在介紹應用配置類端點和度量指標類端點時都講解完了。
+                       那麼還有哪些是操作控制類端點呢？
+                       實際上，由於之前介紹的所有端點都是用來反映應用自身的屬性或是運行中的狀態，
+                       相對於操作控制類端點沒有那麼敏感，所以他們默認都是啟用的。
+                       而操作控制類端點擁有更強大的控制能力，如果要使用它們的話，需要通過屬性來配置開啟。
+
+
+
+     application.properties
+
+     http://127.0.0.1:8080/shutdown
+
+
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+

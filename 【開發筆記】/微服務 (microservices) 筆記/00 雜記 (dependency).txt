@@ -1,0 +1,195 @@
+﻿★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+【pom.xml】的 Tag 資訊
+
+parent
+  groupId
+    artifactId
+    version
+    relativePath
+
+  
+modelVersion
+name
+description
+
+
+groupId
+artifactId
+version
+packaging
+
+
+properties
+  jdk.version
+  java.version
+  project.build.sourceEncoding
+  projecd.reporting.outputEncoding
+
+  
+modules
+  module
+
+  
+dependencyManagement
+
+  dependencies
+    dependency
+      groupId
+      artifactId
+	  version
+  
+  dependencies
+    dependency
+      groupId
+      artifactId
+      version
+      type
+      scope	
+	
+  
+dependencies
+
+  dependency
+    groupId
+    artifactId
+	
+  dependency
+    groupId
+    artifactId
+    scope
+    exclusions
+      exclusion
+        groupId
+        artifactId
+	  
+ 
+build 
+  plugins
+    plugin
+      groupId
+      artifactId
+
+
+
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+
+
+	  
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+【org.springframework.boot】
+
+ ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+﹝Spring-Boot﹞
+
+ spring-boot-starter
+ spring-boot-starter-web
+ spring-boot-starter-test
+ spring-boot-starter-actuator
+ spring-boot-devtools
+
+ ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+﹝Spring-Boot-Admin﹞
+
+  (伺服器端) 
+  spring-boot-admin-starter-server
+  spring-boot-admin-server-ui
+
+  (客戶端) 
+  spring-boot-admin-starter-client
+ 
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+
+
+  
+
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+【org.springframework.cloud】
+
+ ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+﹝Spring-Cloud-Eureka﹞： 服務治理 (註冊中心)
+
+ (伺服器端) 
+  spring-cloud-starter-eureka-server
+  spring-cloud-starter-netflix-eureka-server
+
+ (客戶端) 
+  spring-cloud-starter-eureka
+  spring-cloud-starter-netflix-eureka-client
+  
+
+
+《application.properties》
+ 
+ 
+ 【server 端】
+   
+   server.port=1111
+   
+   eureka.instance
+     hostname=server
+ 
+   eureka.server
+     enable-self-preservation=false
+	 
+   eureka.client
+     register-with-eureka=false
+     fetch-registry=false
+     registry-fetch-interval-seconds=30
+	
+ 
+ 
+ 【client 端】
+ 	
+   server.port=8081
+	
+   eureka.instance
+     hostname=provider1
+     lease-expiration-duration-in-seconds=90
+     lease-renewal-interval-in-seconds=30
+     prefer-ip-address=false
+    
+   eureka.client
+     register-with-eureka=true
+     fetch-registry=true
+     registry-fetch-interval-seconds=30
+     serviceUrl.defaultZone=http://eureka-server:1111/eureka
+ 
+ ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+﹝Spring-Cloud-Ribbon﹞： 負載平衡
+ 
+  (客戶端) 
+  spring-cloud-starter-ribbon
+  spring-cloud-starter-netflix-ribbon
+  
+ ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+ ﹝Spring-Cloud-Hystrix﹞：
+  
+  1. 服務降級
+  2. 服務熔斷
+  3. 執行緒和訊號隔離
+  4. 請求快取
+  5. 請求合併
+  6. 服務監控
+  
+  (客戶端) 
+  spring-cloud-starter-netflix-hystrix
+  
+  
+  
+ 《application.properties》
+  management.endpoints.web.exposure.include=hystrix.stream
+
+
+ ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+ ﹝Spring-Cloud-Hystrix-DashBoard﹞：
+ 
+  (客戶端) 
+  spring-cloud-starter-netflix-hystrix-dashboard
+  
+  
+  
+ 《application.properties》 
+  hystrix.dashboard.proxy-stream-allow-list=**
+  
+★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+

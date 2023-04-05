@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- 繼承：父 Module -->
+	<parent>
+		<groupId>spring.cloud.feign</groupId>
+		<artifactId>spring-cloud-feign</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<!-- 項目說明 -->
+	<groupId>spring.cloud.feign</groupId>
+	<artifactId>spring-cloud-feign_serviceapi</artifactId>
+	<packaging>jar</packaging>
+
+	<!-- 基本信息 -->
+	<name>spring-cloud-feign_serviceapi</name>
+	<description>serviceapi</description>
+
+</project>

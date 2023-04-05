@@ -1,0 +1,48 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- 繼承： 父 Module -->
+	<parent>
+		<groupId>com.spring.cloud.hystrix</groupId>
+		<artifactId>spring-cloud-hystrix</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+
+
+	<!-- 項目說明 -->
+	<groupId>com.spring.cloud.hystrix.ribbon</groupId>
+	<artifactId>spring-cloud-hystrix_ribbon_consumer</artifactId>
+	<packaging>jar</packaging>
+
+	<!-- 基本信息 -->
+	<name>spring-cloud-hystrix_ribbon_consumer</name>
+	<description>Ribbon Consumer</description>
+	
+
+	<dependencies>
+
+		<!-- Spring Cloud Eureka Client (客戶端) -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<!-- Spring Cloud Ribbon -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+		</dependency>
+
+		<!-- Spring Cloud Hystrix -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+		</dependency>
+		
+	</dependencies>
+
+</project>

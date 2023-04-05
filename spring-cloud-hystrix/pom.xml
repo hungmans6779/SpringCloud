@@ -1,0 +1,164 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<!-- 繼承： Spring Boot -->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.12.RELEASE</version>
+		<relativePath />
+	</parent>
+
+
+
+	<!-- 項目說明 -->
+	<groupId>com.spring.cloud.hystrix</groupId>
+	<artifactId>spring-cloud-hystrix</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<!-- 基本信息 -->
+	<name>spring-cloud-hystrix (POM)</name>
+	<description>Spring Cloud Hystrix</description>
+
+
+	<!-- 參數設定 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+
+	<!-- 子 Module -->
+	<modules>
+		<module>spring-cloud-hystrix_eureka_server</module>
+		<module>spring-cloud-hystrix_eureka_client</module>
+		<module>spring-cloud-hystrix_ribbon_consumer</module>
+		<module>spring-cloud-hystrix_turbine</module>
+		<module>spring-cloud-hystrix_dashboard</module>
+	</modules>
+
+	<!-- 管理 子 Module 的版本 -->
+	<dependencyManagement>
+
+		<dependencies>
+
+			<!-- 子 Module (統一由這裡控制版本) -->
+			<dependency>
+				<groupId>com.spring.cloud.hystrix.eureka.server</groupId>
+				<artifactId>spring-cloud-hystrix_eureka_server</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<!-- 子 Module (統一由這裡控制版本) -->
+			<dependency>
+				<groupId>com.spring.cloud.hystrix.eureka.client</groupId>
+				<artifactId>spring-cloud-hystrix_eureka_client</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<!-- 子 Module (統一由這裡控制版本) -->
+			<dependency>
+				<groupId>com.spring.cloud.hystrix.ribbon</groupId>
+				<artifactId>spring-cloud-hystrix_ribbon_consumer</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<!-- 子 Module (統一由這裡控制版本) -->
+			<dependency>
+				<groupId>com.spring.cloud.hystrix.turbine</groupId>
+				<artifactId>spring-cloud-hystrix_turbine</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<!-- 子 Module (統一由這裡控制版本) -->
+			<dependency>
+				<groupId>com.spring.cloud.hystrix.dashboard</groupId>
+				<artifactId>spring-cloud-hystrix_dashboard</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>2.3.12.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>Hoxton.SR11</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- 全端 Web 開發模組 (包含嵌入式 Tomcat、Spring MVC) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- 通用測試模組 (包含 JUnit、Hamcrest、Mockito) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- 監控端點 (包含 環境變數、垃圾收集資訊、記憶體資訊、執行緒池資訊 ...) -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!-- 熱部署 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
