@@ -1,0 +1,18 @@
+步驟一、
+先撰寫 Dockerfile
+
+
+步驟二、執行 Dockerfile
+docker build --build-arg JAR_FILE=target/*.jar -t spring-boot/demo:20230514_01 .
+
+
+步驟三、運行 docker images
+docker run -d -p 8080:8080 spring-boot/demo:20230514_01
+
+
+步驟四、開啟瀏覽器運行
+http://localhost:8080/demo
+
+
+
+
