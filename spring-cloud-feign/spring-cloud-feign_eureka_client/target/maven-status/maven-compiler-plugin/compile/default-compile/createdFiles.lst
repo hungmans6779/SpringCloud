@@ -1,0 +1,3 @@
+spring\cloud\feign\eureka\client\pojo\User.class
+spring\cloud\feign\eureka\client\SpringCloudFeignEurekaClientApplication.class
+spring\cloud\feign\eureka\client\controller\HelloController.class

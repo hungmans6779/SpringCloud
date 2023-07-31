@@ -1,0 +1,3 @@
+spring\cloud\feign\serviceapi\dto\User.class
+spring\cloud\feign\serviceapi\SpringCloudFeignServiceAPIApplication.class
+spring\cloud\feign\serviceapi\service\HelloService.class
