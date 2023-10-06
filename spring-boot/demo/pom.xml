@@ -64,7 +64,39 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!--
+		com.innoventsolutions.birt.runtime:org.eclipse.birt.runtime_4.8.0-20180626:4.8.0
+		<dependency>
+			<groupId>com.innoventsolutions.birt.runtime</groupId>
+			<artifactId>org.eclipse.birt.runtime_4.8.0-20180626</artifactId>
+			<version>4.8.0</version>
+		</dependency>
+        -->
+		<!--
+		<dependency>
+			<groupId>com.innoventsolutions.birt.runtime</groupId>
+			<artifactId>org.eclipse.birt.runtime_4.13.0-202304181804</artifactId>
+			<version>4.13.0</version>
+		</dependency>
+		  -->
+
+		<!--
+		<dependency>
+			<groupId>com.customer.birt.runtime</groupId>
+			<artifactId>org.eclipse.birt.runtime</artifactId>
+			<version>4.8.0-202010080643</version>
+		</dependency>
+		-->
+		<!--
+		<dependency>
+			<groupId>org.eclipse.birt.runtime</groupId>
+			<artifactId>org.eclipse.birt.runtime</artifactId>
+			<version>4.13.0-202304181804</version>
+		</dependency>
+		-->
+
 	</dependencies>
+
 
 	<build>
 		<plugins>

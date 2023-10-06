@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Built-By: hungm
-Build-Jdk: 17.0.7
-Implementation-Title: config-server-eureka-rabbit
-Implementation-Version: 1.0.0
-Implementation-Vendor-Id: com.didispace
-Implementation-Vendor: Pivotal Software, Inc.
-Created-By: Maven Integration for Eclipse
-
