@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-By: hungm
+Build-Jdk: 17.0.8.1
+Implementation-Title: spring-cloud-eureka (Client)
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.spring.cloud.eureka
+Implementation-Vendor: Pivotal Software, Inc.
+Created-By: Maven Integration for Eclipse
+
