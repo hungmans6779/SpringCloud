@@ -1,4 +1,0 @@
-com\data\redis\conf\RedisConfig.class
-com\data\redis\service\UserCacheRedisService.class
-com\data\redis\TestClient.class
-com\data\redis\conf\RedisObjectSerializer.class

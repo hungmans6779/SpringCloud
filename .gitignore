@@ -6,7 +6,7 @@
 .sts4-cache/**
 
 ### Maven Project ###
-target/**
+target/
 
 
 
