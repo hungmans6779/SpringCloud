@@ -1,1 +1,1 @@
-java -jar ../jar/hello-0.0.1-SNAPSHOT.jar --spring.profiles.active=test
+java -jar ../jar/hello-3.2.1-JDK17.jar --spring.profiles.active=test

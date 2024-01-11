@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -12,7 +13,8 @@
 
 	<groupId>com.spring</groupId>
 	<artifactId>hello</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<version>3.2.1-JDK17</version>
 
 	<name>spring-boot-hello</name>
 	<description>Spring Boot (with actuator)</description>
@@ -51,11 +53,10 @@
 			<scope>runtime</scope>
 		</dependency>
 
-
 		<dependency>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-resources-plugin</artifactId>
-			<version>3.2.0</version>
+			<version>3.3.1</version>
 		</dependency>
 
 	</dependencies>
