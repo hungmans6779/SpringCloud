@@ -1,1 +1,7 @@
-git rm -r --cached target
+# git 清除所有 .gitignore
+git rm -r --cached .
+
+# git rm -r --cached target
+
+git add .
+git commit -m 'add .gitignore file'
