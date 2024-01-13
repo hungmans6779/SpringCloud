@@ -12,28 +12,6 @@
 @ECHO OFF
 
 
-
-ECHO\
-ECHO\
-ECHO\
-ECHO 執行批次：【spring-boot_hello.bat】
-
-
-ECHO\
-ECHO\
-ECHO\
-@REM 設定 SpringCloud 專案資料匣的路徑
-ECHO SpringCloud 專案資料匣的路徑：《%PROJECT_ProjectFolder%》
-
-
-@REM 設定專案路徑名稱
-SET PROJECT_PATH_NAME=spring-boot\hello
-ECHO\
-ECHO 專案路徑：《%PROJECT_PATH_NAME%》
-
-
-
-ECHO\
 ECHO\
 ECHO\
 ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
@@ -41,33 +19,28 @@ ECHO 專案建置開始：【spring-boot_hello】
 
 ECHO\
 ECHO\
-ECHO\
-CALL mvn clean install package -s %M2_CONF% -f ..\spring-boot\hello\pom.xml
+CALL mvn clean install package -s %M2_CONF_REPO% -f ..\spring-boot\hello\pom.xml
 
 
-ECHO\
 ECHO\
 ECHO\
 @REM 複製編譯完成的 JAR 到批次目錄
-ECHO 複製編譯完成的 JAR 到批次目錄：%PROJECT_ProjectFolder%\run_jar\%PROJECT_PATH_NAME%\jar\
-CALL COPY %PROJECT_ProjectFolder%\%PROJECT_PATH_NAME%\target\*.jar  %PROJECT_ProjectFolder%\run_jar\%PROJECT_PATH_NAME%\jar\
+ECHO 複製編譯完成的 JAR 到批次目錄：%PJ_FOLDER%\run_jar\%PJ_PATH_NAME%\jar\
+CALL COPY %PJ_FOLDER%\%PJ_PATH_NAME%\target\*.jar  %PJ_FOLDER%\run_jar\%PJ_PATH_NAME%\jar\
 
 
-ECHO\
 ECHO\
 ECHO\
 @REM OWASP Dependency-Check 檢查 JAR 的弱點
-ECHO OWASP Dependency-Check 檢查 %PROJECT_PATH_NAME%\*.jar 的弱點
-CALL %dependency-check_PATH%\dependency-check.bat -project %PROJECT_PATH_NAME%  ^
-                                                  -s %PROJECT_ProjectFolder%\run_jar\%PROJECT_PATH_NAME%\jar\*.jar  ^
+ECHO OWASP Dependency-Check 檢查 %PJ_PATH_NAME%\*.jar 的弱點
+CALL %dependency-check_PATH%\dependency-check.bat -project %PJ_PATH_NAME%  ^
+                                                  -s %PJ_FOLDER%\run_jar\%PJ_PATH_NAME%\jar\*.jar  ^
                                                   -f ALL  ^
-                                                  -o %PROJECT_ProjectFolder%\dependency-check_report\%PROJECT_PATH_NAME%\
+                                                  -o %PJ_FOLDER%\dependency-check_report\%PJ_PATH_NAME%\
 
 
 
 
-
-ECHO\
 ECHO\
 ECHO\
 ECHO 專案建置結束：【spring-boot_hello】
