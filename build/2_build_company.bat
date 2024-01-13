@@ -66,7 +66,7 @@ ECHO 使用 Spring Cloud 小而美而精的微服務
 
 
 
-CALL project\01_spring-boot_hello.bat
+CALL project\spring-boot\01_spring-boot_hello.bat
 
 
 

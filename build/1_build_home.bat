@@ -71,8 +71,9 @@ ECHO SpringCloud
 ECHO 使用 Spring Cloud 小而美而精的微服務
 
 
-
-CALL project\01_1_build_mave_spring-boot_hello.bat
+@REM pring-boot_hello
+ECHO pring-boot_hello
+CALL project\spring-boot\01_1_build_mave_spring-boot_hello.bat
 
 
 
