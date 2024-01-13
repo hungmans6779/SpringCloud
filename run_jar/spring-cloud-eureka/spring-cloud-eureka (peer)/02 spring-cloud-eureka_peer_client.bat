@@ -1,0 +1,1 @@
+java -jar jar/spring-cloud-eureka_peer_client_hello-0.0.1-SNAPSHOT.jar

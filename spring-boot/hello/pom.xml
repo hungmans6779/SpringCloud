@@ -16,7 +16,7 @@
 	<packaging>jar</packaging>
 	<version>3.2.1-JDK17</version>
 
-	<name>spring-boot-hello</name>
+	<name>spring-boot_hello</name>
 	<description>Spring Boot (with actuator)</description>
 	<url>http://localhost:8080/hello</url>
 

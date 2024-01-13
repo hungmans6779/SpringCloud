@@ -32,15 +32,15 @@ ECHO PATH 變數
 ECHO %PATH%
 
 
-@REM 設定本機 SpringCloud 專案的路徑
-SET PROJECT_PATH=E:\Developers\SourceCodes\GitHub\SpringProjects\SpringCloud
+@REM 設定 SpringCloud 專案資料匣的路徑
+SET PROJECT_ProjectFolder=E:\Developers\SourceCodes\GitHub\SpringProjects\SpringCloud
 ECHO\
-ECHO PROJECT_PATH 變數
-ECHO %PROJECT_PATH%
+ECHO PROJECT_ProjectFolder 變數
+ECHO %PROJECT_ProjectFolder%
 
 
 @REM 設定本機的 dependency-check 路徑
-SET dependency-check_PATH=E:\Developers\dependency-check\dependency-check-9.0.8\bin
+SET dependency-check_PATH=E:\Developers\Tools\dependency-check\dependency-check-9.0.8\bin
 
    
 
@@ -72,7 +72,7 @@ ECHO 使用 Spring Cloud 小而美而精的微服務
 
 
 
-CALL project\01_spring-boot_hello.bat
+CALL project\01_1_build_mave_spring-boot_hello.bat
 
 
 

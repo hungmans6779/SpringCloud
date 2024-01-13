@@ -32,7 +32,7 @@ ECHO PATH 變數
 ECHO %PATH%
 
 
-REM 設定本機 SpringCloud 專案的路徑
+REM 設定 SpringCloud 專案的路徑
 SET PROJECT_PATH=E:\Developers\SourceCodes\GitHub\SpringProjects\SpringCloud
 ECHO\
 ECHO PROJECT_PATH 變數
