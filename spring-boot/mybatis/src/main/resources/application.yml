@@ -1,0 +1,17 @@
+server:
+  port: 8083
+
+  
+  # 設定資料來源
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/springboot?useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 1qaz@WSX
+
+# 整合mybatis
+mybatis:
+  mapper-locations: classpath*:mybatis/mapper/*.xml
+  configuration:   #指定mybatis全域性組態檔中的相關設定項
+    map-underscore-to-camel-case: true

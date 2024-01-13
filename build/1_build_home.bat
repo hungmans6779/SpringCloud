@@ -7,19 +7,19 @@ ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡
 ECHO ¡i®a¥Î¹q¸£ªº³]©wÀô¹ÒÅÜ¼Æ¡j
 
 REM ³]©w JAVA ³n¥ó¸ô®|
-SET JAVA_HOME=E:\Developers\Tools\jdk-17.0.9.9-hotspot
+SET JAVA_HOME=D:\Developers\Tools\jdk-17.0.9.9-hotspot
 ECHO\
 ECHO JAVA_HOME ÅÜ¼Æ
 ECHO %JAVA_HOME%
 
 
 @REM ³]©w MAVEN ³n¥ó ©M REPO For SpringCloud ¸ô®|
-SET M2_HOME=E:\Developers\Tools\Maven-4.0.0-alpha-10
+SET M2_HOME=D:\Developers\Tools\Maven-4.0.0-alpha-10
 ECHO\
 ECHO M2_HOME ÅÜ¼Æ
 ECHO %M2_HOME%
 ECHO %M2_CONF%
-SET M2_CONF=E:\Developers\Tools\Maven-4.0.0-alpha-10\conf\settings_SpringCloud.xml
+SET M2_CONF=D:\Developers\Tools\Maven-4.0.0-alpha-10\conf\settings_SpringCloud.xml
 ECHO\
 ECHO M2_CONF ÅÜ¼Æ
 ECHO %M2_CONF%
@@ -33,14 +33,14 @@ ECHO %PATH%
 
 
 @REM ³]©w SpringCloud ±M®×¸ê®Æ§Xªº¸ô®|
-SET PROJECT_ProjectFolder=E:\Developers\SourceCodes\GitHub\SpringProjects\SpringCloud
+SET PROJECT_ProjectFolder=D:\Developers\SourceCodes\GitHub\SpringProjects\SpringCloud
 ECHO\
 ECHO PROJECT_ProjectFolder ÅÜ¼Æ
 ECHO %PROJECT_ProjectFolder%
 
 
 @REM ³]©w¥»¾÷ªº dependency-check ¸ô®|
-SET dependency-check_PATH=E:\Developers\Tools\dependency-check\dependency-check-9.0.8\bin
+SET dependency-check_PATH=D:\Developers\Tools\dependency-check\dependency-check-9.0.8\bin
 
    
 

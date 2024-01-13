@@ -1,0 +1,10 @@
+MySQL
+user : root
+pwd  : 1qaz@WSX
+
+
+
+【測試連結】
+
+ http://localhost:8083/queryProducts
+
