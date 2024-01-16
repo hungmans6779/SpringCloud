@@ -1,3 +1,4 @@
+@REM ---------------------------------------------------------------------------
 @REM
 @REM Copyright (c) 2024 kevinhung.  All rights reserved.
 @REM
@@ -11,15 +12,20 @@
 
 @ECHO OFF
 
+@REM 清除螢幕
+CLS
+
+@REM 黑底白字
+COLOR 07
 
 ECHO\
 ECHO\
 ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-ECHO MAVEN 專案建置開始：【spring-boot_hello】
+ECHO MAVEN 專案建置開始：【%PJ_PATH_NAME%】
 
 ECHO\
 ECHO\
-CALL mvn clean install package -s %M2_CONF_REPO% -f ..\spring-boot\hello\pom.xml
+CALL mvn clean install package -s %M2_CONF_REPO% -f ..\%PJ_PATH_NAME%\pom.xml
 
 
 ECHO\
@@ -43,5 +49,5 @@ CALL %dependency-check_PATH%\dependency-check.bat -project %PJ_PATH_NAME%  ^
 
 ECHO\
 ECHO\
-ECHO MAVEN 專案建置結束：【spring-boot_hello】
+ECHO MAVEN 專案建置結束：【%PJ_PATH_NAME%】
 ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★

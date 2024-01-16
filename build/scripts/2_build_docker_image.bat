@@ -1,3 +1,4 @@
+@REM ---------------------------------------------------------------------------
 @REM
 @REM Copyright (c) 2024 kevinhung.  All rights reserved.
 @REM
@@ -6,6 +7,11 @@
 
 @ECHO OFF
 
+@REM ²M°£¿Ã¹õ
+CLS
+
+@REM ²LÂÅ©³¥Õ¦r
+COLOR 97
 
 ECHO\
 ECHO\
