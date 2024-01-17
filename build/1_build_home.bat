@@ -80,7 +80,6 @@ ECHO 專案資料匣：《%PJ_FOLDER%》
 
 ECHO\
 @REM 設定 Docker Image 的 TAG (ex. 202401162359)
-@REM SET IMAGE_TAG=%DATE:~0,4%%DATE:~5,2%%DATE:~8,2%%Time:~0,2%%Time:~3,2%
 SET IMAGE_TAG=%DATE:~0,4%%DATE:~5,2%%DATE:~8,2%
 ECHO IMAGE_TAG 變數：《%IMAGE_TAG%》
 
