@@ -1,25 +1,12 @@
 /**
- * KK Owner CONFIDENTIAL
- * 
- * @Package: com.spring.hello
- * @FileName: HelloApplication.java
- * @author: chiahung.hung
- * @date: 2019/8/22, 上午 09:39:10
- * 
- *        <pre>
- *  Copyright 2013-2014 The KK Owner Co., Ltd. all rights reserved.
- *
- *  NOTICE:  All information contained herein is, and remains
- *  the property of KK Owner Co., Ltd. and its suppliers,
- *  if any.  The intellectual and technical concepts contained
- *  herein are proprietary to KK Owner Co., Ltd. and its suppliers
- *  and may be covered by TAIWAN and Foreign Patents, patents in 
- *  process, and are protected by trade secret or copyright law.
- *  Dissemination of this information or reproduction of this material
- *  is strictly forbidden unless prior written permission is obtained
- *  from KK Owner Co., Ltd.
- *  </pre>
+ * STS IDE
+ * Run Configurations
+ * Project： hello 
+ * Main Class：com.spring.hello.HelloApplication
+ * Arguments：-Dspring.devtools.restart.enabled=true
  */
+
+
 
 package com.spring.hello;
 
