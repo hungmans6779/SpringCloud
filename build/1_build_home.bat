@@ -204,7 +204,7 @@ CLS
 ECHO\
 ECHO\
 ECHO\
-ECHO 離開選單
+ECHO 離開專案建置
 
 ECHO\
 ECHO\
