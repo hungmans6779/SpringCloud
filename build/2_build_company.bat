@@ -1,8 +1,17 @@
+Markup
+
 @ECHO OFF
 
+@REM 清除螢幕
+CLS
+
+@REM 黑底白字
+COLOR 07
+
+
 ECHO\ 
-ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-ECHO 【公司電腦的系統環境變數】
+ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+ECHO 【家用電腦的系統環境變數】
 
 @REM 設定 JAVA 軟件路徑
 SET JAVA_HOME=D:\Developers\Tools\jdk-17.0.9.9-hotspot
@@ -37,57 +46,121 @@ ECHO %PATH%
 
 ECHO\
 ECHO\
-ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
 
 ECHO\
-ECHO\
-ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 ECHO JAVA 版本
 CALL java -version
-ECHO ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+ECHO ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
 ECHO MAVEN 版本
 CALL mvn -version 
-ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 ECHO\
 ECHO\
 
 
 PAUSE
 
+@REM 清除螢幕
+CLS
 
 ECHO\ 
 @REM 使用 Spring Cloud 小而美而精的微服務
-ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 ECHO 使用 Spring Cloud 小而美而精的微服務
 
+
 ECHO\
+@REM 專案資料匣
 SET PJ_FOLDER=D:\Developers\SourceCodes\GitHub\SpringProjects\SpringCloud
 ECHO 專案資料匣：《%PJ_FOLDER%》
 
+
 ECHO\
-ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+@REM 設定 Docker Image 的 TAG (ex. 202401162359)
+@REM SET IMAGE_TAG=%DATE:~0,4%%DATE:~5,2%%DATE:~8,2%%Time:~0,2%%Time:~3,2%
+SET IMAGE_TAG=%DATE:~0,4%%DATE:~5,2%%DATE:~8,2%
+ECHO IMAGE_TAG 變數：《%IMAGE_TAG%》
+
+
+ECHO\
+@REM MAVEN 專案建置的批次
+SET PJ_MVN_BAT=scripts\1_build_mave_project.bat
+ECHO PJ_MVN_BAT 變數：《%PJ_MVN_BAT%》
+
+
+ECHO\
+@REM Dockerfile 建置的批次
+SET PJ_DOCKER_IMAGE_BAT=scripts\2_build_docker_image.bat
+ECHO PJ_DOCKER_IMAGE_BAT 變數：《%PJ_DOCKER_IMAGE_BAT%》
+
+ECHO\
+ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
 
 PAUSE
 
 
-ECHO\
-ECHO\
-ECHO\
-ECHO\
-ECHO\
+
+
+@REM ◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎
+
+@REM 選單
+GOTO MENU
+
+
+@REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+@REM 主選單
+:MENU
+
+@REM 清除螢幕
+CLS
+
+@REM 藍底白字
+COLOR 1F
+
+ECHO **************************************************
+ECHO  1.【spring-boot\hello】
+ECHO  2.【spring-boot\spring-boot-admin】
+ECHO 99.【離開選單】
+ECHO **************************************************
+ECHO. 請選擇要上列的選項：
+SET /p item=
+if "%item%"=="1" goto ITEM01
+if "%item%"=="2" goto ITEM02
+if "%item%"=="99" goto EXIT
+
+
+@REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
 @REM 專案 【spring-boot\hello】
+:ITEM01
+
+ECHO\
+ECHO\
+ECHO\
+ECHO\
+ECHO\
+@REM 設定 MAVEN 專案的目錄
 SET PJ_PATH_NAME=spring-boot\hello
-SET PJ_MVN_BAT=project\spring-boot\01_1_build_mave_spring-boot_hello.bat
+
+@REM 設定 Docker Image 的名稱
+SET IMAGE_NAME=kevinhung/spring-boot_hello
+
+@REM 建置 Maven 專案
 ECHO 專案路徑名稱：《%PJ_PATH_NAME%》
-ECHO 執行 Maven 建置批次：【%PJ_MVN_BAT%】
 CALL %PJ_MVN_BAT%
 
+@REM 建置 Docker Image
+ECHO 專案路徑名稱：《%PJ_PATH_NAME%》
+CALL %PJ_DOCKER_IMAGE_BAT%
 
+@REM 黑底白字
+COLOR 07
 
-
-
+@REM 回到批次檔的原目錄
+CD %PJ_FOLDER%\build
 
 ECHO\
 ECHO\
@@ -96,6 +169,52 @@ ECHO SpringCloud MAVEN 專案編譯完成
 
 
 ECHO\
+PAUSE
+
+GOTO :MENU
+
+
+
+@REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+@REM 專案 【spring-boot\spring-boot-admin】
+:ITEM02
+
+ECHO\
+ECHO\
+ECHO\
+ECHO 尚未處理 spring-boot\spring-boot-admin
+
+ECHO\
 ECHO\
 ECHO\
 PAUSE
+
+GOTO :MENU
+
+
+@REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+@REM 離開選單
+:EXIT
+
+@REM 黑底白字
+COLOR 07
+
+@REM 清除螢幕
+CLS
+
+ECHO\
+ECHO\
+ECHO\
+ECHO 離開選單
+
+ECHO\
+ECHO\
+PAUSE
+
+ECHO\
+ECHO\
+ECHO\
+@REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+
+
+@REM ◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎
