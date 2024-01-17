@@ -12,9 +12,9 @@ target/
 
 ### IntelliJ IDEA ###
 .idea
-*.iws
-*.iml
-*.ipr
+.iws
+.iml
+.ipr
 
 
 ### VS Code ###

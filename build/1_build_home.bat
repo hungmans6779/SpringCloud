@@ -86,7 +86,7 @@ ECHO IMAGE_TAG 變數：《%IMAGE_TAG%》
 
 ECHO\
 @REM MAVEN 專案建置的批次
-SET PJ_MVN_BAT=scripts\1_build_mave_project.bat
+SET PJ_MVN_BAT=scripts\1_1_build_mave_project_home.bat
 ECHO PJ_MVN_BAT 變數：《%PJ_MVN_BAT%》
 
 
@@ -123,13 +123,13 @@ COLOR 1F
 ECHO **************************************************
 ECHO  1.【spring-boot\hello】
 ECHO  2.【spring-boot\spring-boot-admin】
-ECHO 99.【離開選單】
+ECHO  x.【離開選單】
 ECHO **************************************************
 ECHO. 請選擇要上列的選項：
 SET /p item=
 if "%item%"=="1" goto ITEM01
 if "%item%"=="2" goto ITEM02
-if "%item%"=="99" goto EXIT
+if "%item%"=="x" goto EXIT
 
 
 @REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
