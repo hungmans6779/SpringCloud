@@ -1,1 +1,0 @@
-java -jar jar/spring-boot-admin_client-0.0.1-SNAPSHOT.jar

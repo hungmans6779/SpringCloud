@@ -27,10 +27,6 @@ ECHO Image push DockerHub (帳號：kevinhung)
 CALL docker push %DOCKER_IMAGE_NAME%:%DOCKER_IMAGE_TAG%
  
 
-@REM 運行 Docker image 的方式 
-@REM docker run -d -p 8080:8080 spring-boot/hello:%DOCKER_IMAGE_TAG%
-@REM http://localhost:8080/hello
- 
  
 ECHO\
 ECHO\

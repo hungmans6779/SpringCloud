@@ -46,12 +46,12 @@ COLOR 07
 @REM 設定開發建置變數
 SET ENV_VAR=HOME
 
-ECHO 建置環境批次名稱：《1_1_env_home.bat》
+ECHO 建置環境的批次：《1_1_env_home.bat》
 CALL 1_1_env_home.bat
 PAUSE
 
-ECHO 建置專案批次名稱：《2_build_spring_project.bat》
-CALL 2_build_spring_project.bat
+ECHO 選擇專案的批次：《2_choice_project.bat》
+CALL 2_choice_project.bat
 
 @REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
 goto :MENU_ENV
@@ -71,12 +71,12 @@ COLOR 87
 @REM 開發建置變數
 SET ENV_VAR=COMPANY
 
-ECHO 建置環境批次名稱：《1_2_env_company.bat》
+ECHO 建置環境的批次：《1_2_env_company.bat》
 CALL 1_2_env_company.bat
 PAUSE
 
-ECHO 建置專案批次名稱：《2_build_spring_project.bat》
-CALL 2_build_spring_project.bat
+ECHO 選擇專案的批次：《2_choice_project.bat》
+CALL 2_choice_project.bat
 
 @REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
 goto :MENU_ENV
