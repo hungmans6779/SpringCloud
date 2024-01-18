@@ -60,9 +60,9 @@ ECHO  x.【離開專案建置選單】
 ECHO **************************************************
 ECHO. 請選擇要建置的專案選項：
 SET /p item_project=
-if "%item_project%"=="1" goto :MENU_PROJECT_ITEM001
-if "%item_project%"=="2" goto :MENU_PROJECT_ITEM002
-if "%item_project%"=="x" goto :MENU_PROJECT_EXIT
+if "%item_project%"=="1" goto MENU_PROJECT_ITEM001
+if "%item_project%"=="2" goto MENU_PROJECT_ITEM002
+if "%item_project%"=="x" goto MENU_PROJECT_EXIT
 
 
 :MENU_PROJECT_ITEM001
@@ -84,8 +84,9 @@ SET DOCKER_IMAGE_NAME=kevinhung/spring-boot_hello
 @REM 建置 Maven 專案
 CALL %BUILD_MVN_PROJECT_BAT%
 
-@REM 建置 Docker Image
-CALL %BUILD_DOCKER_IMAGE_BAT%
+@REM 建置 Docker Image(如果是在家建置才執行 Docker Image 的建置和佈版)
+If "%ENV_VAR%"=="HOME" CALL %BUILD_DOCKER_IMAGE_BAT%
+
 
 
 @REM 黑底白字
@@ -125,8 +126,10 @@ SET DOCKER_IMAGE_NAME=kevinhung/spring-boot-admin
 @REM 建置 Maven 專案
 CALL %BUILD_MVN_PROJECT_BAT%
 
-@REM 建置 Docker Image
-CALL %BUILD_DOCKER_IMAGE_BAT%
+@REM 建置 Docker Image (如果是在家建置才執行 Docker Image 的建置和佈版)
+If "%ENV_VAR%"=="HOME" CALL %BUILD_DOCKER_IMAGE_BAT%
+
+
 
 @REM 黑底白字
 COLOR 07

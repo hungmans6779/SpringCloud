@@ -27,9 +27,9 @@ ECHO x.【離開】
 ECHO **************************************************
 ECHO 請選擇建置環境的選項：
 SET /p item_env=
-if "%item_env%"=="1" goto :MENU_ENV_HOME
-if "%item_env%"=="2" goto :MENU_ENV_COMPANY
-if "%item_env%"=="x" goto :MENU_ENV_EXIT
+if "%item_env%"=="1" goto MENU_ENV_HOME
+if "%item_env%"=="2" goto MENU_ENV_COMPANY
+if "%item_env%"=="x" goto MENU_ENV_EXIT
 
 
 
