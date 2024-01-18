@@ -6,32 +6,32 @@ COLOR 07
 
 
 ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
-ECHO MAVEN 專案建置開始：【%PJ_PATH_NAME%】
+ECHO MAVEN 專案建置開始：【%PROJECT_PATH_NAME%】
 
 ECHO\
 ECHO\
-CALL mvn clean install package -s %M2_CONF_REPO% -f ..\%PJ_PATH_NAME%\pom.xml
+CALL mvn clean install package -s %M2_CONF_REPO% -f ..\%PROJECT_PATH_NAME%\pom.xml
 
 
 ECHO\
 ECHO\
 @REM 複製編譯完成的 JAR 到批次目錄
-ECHO 複製編譯完成的 JAR 到批次目錄：%PJ_FOLDER%\run_jar\%PJ_PATH_NAME%\jar\
-CALL COPY %PJ_FOLDER%\%PJ_PATH_NAME%\target\*.jar  %PJ_FOLDER%\run_jar\%PJ_PATH_NAME%\jar\
+ECHO 複製編譯完成的 JAR 到批次目錄：%PROJECT_FOLDER%\run_jar\%PROJECT_PATH_NAME%\jar\
+CALL COPY %PROJECT_FOLDER%\%PROJECT_PATH_NAME%\target\*.jar  %PROJECT_FOLDER%\run_jar\%PROJECT_PATH_NAME%\jar\
 
 
 ECHO\
 ECHO\
 @REM OWASP Dependency-Check 檢查 JAR 的弱點
-ECHO OWASP Dependency-Check 檢查 %PJ_PATH_NAME%\*.jar 的弱點
-CALL %dependency-check_PATH%\dependency-check.bat -project %PJ_PATH_NAME%  ^
-                                                  -s %PJ_FOLDER%\run_jar\%PJ_PATH_NAME%\jar\*.jar  ^
+ECHO OWASP Dependency-Check 檢查 %PROJECT_PATH_NAME%\*.jar 的弱點
+CALL %dependency-check_PATH%\dependency-check.bat -project %PROJECT_PATH_NAME%  ^
+                                                  -s %PROJECT_FOLDER%\run_jar\%PROJECT_PATH_NAME%\jar\*.jar  ^
                                                   -f ALL  ^
-                                                  -o %PJ_FOLDER%\dependency-check_report\%PJ_PATH_NAME%\
+                                                  -o %PROJECT_FOLDER%\dependency-check_report\%PROJECT_PATH_NAME%\
 
 
 
 ECHO\
 ECHO\
-ECHO MAVEN 專案建置結束：【%PJ_PATH_NAME%】
+ECHO MAVEN 專案建置結束：【%PROJECT_PATH_NAME%】
 ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★

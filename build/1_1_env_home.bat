@@ -34,9 +34,9 @@ ECHO %PATH%
 
 
 @REM 專案資料匣
-SET PJ_FOLDER=D:\Developers\SourceCodes\GitHub\SpringProjects\SpringCloud
+SET PROJECT_FOLDER=D:\Developers\SourceCodes\GitHub\SpringProjects\SpringCloud
 ECHO\
-ECHO 專案資料匣：《%PJ_FOLDER%》
+ECHO 專案資料匣：《%PROJECT_FOLDER%》
 
 
 ECHO\
