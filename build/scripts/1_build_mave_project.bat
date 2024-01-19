@@ -63,10 +63,12 @@ ECHO\
 ECHO\
 @REM OWASP Dependency-Check 檢查 JAR 的弱點
 ECHO OWASP Dependency-Check 檢查 %PROJECT_PATH_NAME%\*.jar 的弱點
-CALL %dependency-check_PATH%\dependency-check.bat -project %PROJECT_PATH_NAME%  ^
-                                                  -s %PROJECT_FOLDER%\run_jar\%PROJECT_PATH_NAME%\jar\*.jar  ^
-                                                  -f ALL  ^
-                                                  -o %PROJECT_FOLDER%\dependency-check_report\%PROJECT_PATH_NAME%\
+If "%ENV_VAR%"=="HOME" CALL %dependency-check_PATH%\dependency-check.bat -project %PROJECT_PATH_NAME%  ^
+                                                                          -s %PROJECT_FOLDER%\run_jar\%PROJECT_PATH_NAME%\jar\*.jar  ^
+                                                                          -f ALL  ^
+                                                                          -o %PROJECT_FOLDER%\dependency-check_report\%PROJECT_PATH_NAME%\
+
+
 ECHO\
 ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
