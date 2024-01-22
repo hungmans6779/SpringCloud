@@ -78,14 +78,18 @@ ECHO\
 @REM 設定 MAVEN 專案的目錄
 SET PROJECT_PATH_NAME=spring-boot\hello
 
-@REM 設定 Docker Image 的名稱
-SET DOCKER_IMAGE_NAME=kevinhung/spring-boot_hello
-
 @REM 建置 Maven 專案
 CALL %BUILD_MVN_PROJECT_BAT%
 
+
+@REM 設定 MAVEN 子專案的目錄
+SET PROJECT_CHILD_PATH_NAME=
+
+@REM 設定 Docker Image 的名稱
+SET DOCKER_IMAGE_NAME=kevinhung/spring-boot_hello
+
 @REM 建置 Docker Image(如果是在家建置才執行 Docker Image 的建置和佈版)
-If "%ENV_VAR%"=="HOME" CALL %BUILD_DOCKER_IMAGE_BAT%
+If "%ENV_VAR%"=="HOME" CALL %PROJECT_FOLDER%\build\%BUILD_DOCKER_IMAGE_BAT%
 
 
 
@@ -120,14 +124,28 @@ ECHO\
 @REM 設定 MAVEN 專案的目錄
 SET PROJECT_PATH_NAME=spring-boot\spring-boot-admin
 
-@REM 設定 Docker Image 的名稱
-SET DOCKER_IMAGE_NAME=kevinhung/spring-boot-admin
-
 @REM 建置 Maven 專案
 CALL %BUILD_MVN_PROJECT_BAT%
 
+
+@REM 設定 MAVEN 子專案：spring-boot-admin_server 的目錄
+SET PROJECT_CHILD_PATH_NAME=spring-boot\spring-boot-admin\spring-boot-admin_server
+
+@REM 設定 Docker Image 的名稱
+SET DOCKER_IMAGE_NAME=kevinhung/spring-boot-admin_server
+
 @REM 建置 Docker Image (如果是在家建置才執行 Docker Image 的建置和佈版)
-If "%ENV_VAR%"=="HOME" CALL %BUILD_DOCKER_IMAGE_BAT%
+If "%ENV_VAR%"=="HOME" CALL %PROJECT_FOLDER%\build\%BUILD_DOCKER_IMAGE_BAT%
+
+
+@REM 設定 MAVEN 子專案：spring-boot-admin_client 的目錄
+SET PROJECT_CHILD_PATH_NAME=spring-boot\spring-boot-admin\spring-boot-admin_client
+        
+@REM 設定 Docker Image 的名稱
+SET DOCKER_IMAGE_NAME=kevinhung/spring-boot-admin_client
+
+@REM 建置 Docker Image (如果是在家建置才執行 Docker Image 的建置和佈版)
+If "%ENV_VAR%"=="HOME" CALL %PROJECT_FOLDER%\build\%BUILD_DOCKER_IMAGE_BAT%
 
 
 

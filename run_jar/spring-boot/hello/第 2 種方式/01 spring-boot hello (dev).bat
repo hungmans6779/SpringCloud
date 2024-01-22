@@ -1,1 +1,1 @@
-java -jar ../jar/hello-3.2.1-JDK17.jar --spring.profiles.active=dev
+java -jar ../jar/hello-3.2.2-JDK17.jar --spring.profiles.active=dev
