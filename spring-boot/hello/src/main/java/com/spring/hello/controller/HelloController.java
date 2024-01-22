@@ -21,7 +21,7 @@ public class HelloController {
    */
   @RequestMapping("/hello")
   public String hello() {
-    return "Hello Spring Boot (使用 OpenJDK17,Spring-boot 3.2.111)";
+    return "Hello Spring Boot (使用 OpenJDK17,Spring-boot 3.2.2)";
   }
   
 }  
