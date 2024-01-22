@@ -38,14 +38,14 @@ PAUSE
 
 
 
-GOTO MENU_PROJECT
+GOTO MENU_CHOICE_PROJECT
 
 @REM ◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎◎
 
 
+:MENU_CHOICE_PROJECT
 @REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
 @REM  專案建置建置選單
-:MENU_PROJECT
 
 @REM 清除螢幕
 CLS
@@ -60,9 +60,9 @@ ECHO  x.【離開專案建置選單】
 ECHO **************************************************
 ECHO. 請選擇要建置的專案選項：
 SET /p item_project=
-if "%item_project%"=="1" goto MENU_PROJECT_ITEM001
-if "%item_project%"=="2" goto MENU_PROJECT_ITEM002
-if "%item_project%"=="x" goto MENU_PROJECT_EXIT
+if "%item_project%"=="1" GOTO MENU_PROJECT_ITEM001
+if "%item_project%"=="2" GOTO MENU_PROJECT_ITEM002
+if "%item_project%"=="x" GOTO MENU_PROJECT_EXIT
 
 
 :MENU_PROJECT_ITEM001
@@ -104,7 +104,7 @@ ECHO SpringCloud MAVEN 專案編譯完成
 ECHO\
 PAUSE
 
-GOTO :MENU_PROJECT
+GOTO :MENU_CHOICE_PROJECT
 
 
 :MENU_PROJECT_ITEM002
@@ -146,7 +146,7 @@ ECHO SpringCloud MAVEN 專案編譯完成
 ECHO\
 PAUSE
 
-GOTO :MENU_PROJECT
+GOTO :MENU_CHOICE_PROJECT
 
 
 :MENU_PROJECT_EXIT
