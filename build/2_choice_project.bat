@@ -56,13 +56,18 @@ COLOR 1F
 ECHO **************************************************
 ECHO  1.【spring-boot\hello】
 ECHO  2.【spring-boot\spring-boot-admin】
+ECHO  a.【建置所有專案】
 ECHO  x.【離開專案建置選單】
 ECHO **************************************************
 ECHO. 請選擇要建置的專案選項：
 SET /p item_project=
 if "%item_project%"=="1" GOTO MENU_PROJECT_ITEM001
 if "%item_project%"=="2" GOTO MENU_PROJECT_ITEM002
+if "%item_project%"=="a" GOTO MENU_PROJECT_ALL
 if "%item_project%"=="x" GOTO MENU_PROJECT_EXIT
+
+
+
 
 
 :MENU_PROJECT_ITEM001
@@ -101,13 +106,13 @@ CD %PROJECT_FOLDER%\build
 ECHO\
 ECHO\
 ECHO\
-ECHO SpringCloud MAVEN 專案編譯完成
-
-
+ECHO SpringCloud MAVEN 專案 【spring-boot\hello】 編譯完成
 ECHO\
-PAUSE
 
-GOTO :MENU_CHOICE_PROJECT
+if not "%item_project%"=="a" GOTO :MENU_CHOICE_PROJECT
+
+
+
 
 
 :MENU_PROJECT_ITEM002
@@ -163,13 +168,39 @@ CD %PROJECT_FOLDER%\build
 ECHO\
 ECHO\
 ECHO\
-ECHO SpringCloud MAVEN 專案編譯完成
+ECHO SpringCloud MAVEN 專案 【spring-boot\spring-boot-admin】編譯完成
+ECHO\
+
+if not "%item_project%"=="a" GOTO :MENU_CHOICE_PROJECT
 
 
+
+
+
+:MENU_PROJECT_ALL
+@REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
+@REM 專案 【建置所有專案】
+
+GOTO :MENU_PROJECT_ITEM001
+GOTO :MENU_PROJECT_ITEM002
+
+@REM 黑底白字
+COLOR 07
+
+@REM 回到批次檔的原目錄
+CD %PROJECT_FOLDER%\build
+
+ECHO\
+ECHO\
+ECHO\
+ECHO SpringCloud【所有專案】 編譯完成
 ECHO\
 PAUSE
 
-GOTO :MENU_CHOICE_PROJECT
+if "%item_project%"=="a" GOTO :MENU_CHOICE_PROJECT
+
+
+
 
 
 :MENU_PROJECT_EXIT
