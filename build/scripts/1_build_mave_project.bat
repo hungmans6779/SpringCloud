@@ -25,22 +25,15 @@ ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡
 ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹
 ECHO\
 ECHO\
-ECHO ½Æ»s½sÄ¶§¹¦¨ªº JAR ¨ì§å¦¸¥Ø¿ý¡G%PROJECT_FOLDER%\run_jar\%PROJECT_PATH_NAME%\jar\
-if "%PROJECT_PATH_NAME%"=="spring-boot\hello" (
-   @REM ±M®× spring-boot\hello
+ECHO ½Æ»s½sÄ¶§¹¦¨ªº JAR ¨ì§å¦¸¥Ø¿ý
+if "%PROJECT_CHILD_PATH_NAME%"=="" (
    CALL COPY %PROJECT_FOLDER%\%PROJECT_PATH_NAME%\target\*.jar %PROJECT_FOLDER%\run_jar\%PROJECT_PATH_NAME%\jar\
-) else if "%PROJECT_PATH_NAME%"=="spring-boot\spring-boot-admin" (
-   @REM ±M®× spring-boot\spring-boot-admin
-   CALL COPY %PROJECT_FOLDER%\%PROJECT_PATH_NAME%\spring-boot-admin_client\target\*.jar %PROJECT_FOLDER%\run_jar\%PROJECT_PATH_NAME%\jar\
-   CALL COPY %PROJECT_FOLDER%\%PROJECT_PATH_NAME%\spring-boot-admin_server\target\*.jar %PROJECT_FOLDER%\run_jar\%PROJECT_PATH_NAME%\jar\
 ) else (
-  ECHO ©|¥¼©w¸q
+   CALL COPY %PROJECT_FOLDER%\%PROJECT_CHILD_PATH_NAME%\target\*.jar %PROJECT_FOLDER%\run_jar\%PROJECT_CHILD_PATH_NAME%\
 )
+
 ECHO\
 ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹
-
-
-
 
 
 
@@ -49,15 +42,28 @@ ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡
 @REM OWASP Dependency-Check ÀË¬d JAR ªº®zÂI
 @REM ¡i®a¸Ì¶}µo«Ø¸mÀô¹Ò¡j¤~¯à«Ø¸m¦¨¥\
 If "%ENV_VAR%"=="HOME" (
+
   ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹
   ECHO\
-  CALL ECHO OWASP Dependency-Check ÀË¬d %PROJECT_PATH_NAME%\*.jar ªº®zÂI
-  
-  CALL %dependency-check_PATH%\dependency-check.bat -project %PROJECT_PATH_NAME%  ^
-                                                    -s %PROJECT_FOLDER%\run_jar\%PROJECT_PATH_NAME%\jar\*.jar  ^
-                                                    -f ALL  ^
-                                                    -o %PROJECT_FOLDER%\dependency-check_report\%PROJECT_PATH_NAME%\
 
+  if "%PROJECT_CHILD_PATH_NAME%"=="" (
+   
+    CALL ECHO OWASP Dependency-Check ÀË¬d %PROJECT_PATH_NAME%\*.jar ªº®zÂI
+	
+    CALL %dependency-check_PATH%\dependency-check.bat -project %PROJECT_PATH_NAME%  ^
+                                                      -s %PROJECT_FOLDER%\run_jar\%PROJECT_PATH_NAME%\jar\*.jar  ^
+                                                      -f ALL  ^
+                                                      -o %PROJECT_FOLDER%\dependency-check_report\%PROJECT_PATH_NAME%\
+  ) else (
+  
+    CALL ECHO OWASP Dependency-Check ÀË¬d %PROJECT_CHILD_PATH_NAME%\*.jar ªº®zÂI
+	
+    CALL %dependency-check_PATH%\dependency-check.bat -project %PROJECT_CHILD_PATH_NAME%  ^
+                                                      -s %PROJECT_FOLDER%\run_jar\%PROJECT_CHILD_PATH_NAME%\*.jar  ^
+                                                      -f ALL  ^
+                                                      -o %PROJECT_FOLDER%\dependency-check_report\%PROJECT_CHILD_PATH_NAME%\	
+  )
+  
   ECHO\
   ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹
 )
