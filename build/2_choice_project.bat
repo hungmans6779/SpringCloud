@@ -59,8 +59,7 @@ ECHO  2.【spring-boot\spring-boot-admin】
 ECHO  a.【建置所有專案】
 ECHO  x.【離開專案建置選單】
 ECHO **************************************************
-ECHO. 請選擇要建置的專案選項：
-SET /p item_project=
+SET /P item_project=請選擇要建置的專案選項 : 
 if "%item_project%"=="1" GOTO MENU_PROJECT_ITEM001
 if "%item_project%"=="2" GOTO MENU_PROJECT_ITEM002
 if "%item_project%"=="a" GOTO MENU_PROJECT_ALL
@@ -74,11 +73,6 @@ if "%item_project%"=="x" GOTO MENU_PROJECT_EXIT
 @REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
 @REM 專案 【spring-boot\hello】
 
-
-ECHO\
-ECHO\
-ECHO\
-ECHO\
 ECHO\
 @REM 設定 MAVEN 專案的目錄
 SET PROJECT_PATH_NAME=spring-boot\hello
@@ -96,18 +90,14 @@ SET DOCKER_IMAGE_NAME=kevinhung/spring-boot_hello
 If "%ENV_VAR%"=="HOME" CALL %PROJECT_FOLDER%\build\%BUILD_DOCKER_IMAGE_BAT%
 
 
+@REM 回到批次檔的原目錄
+CD %PROJECT_FOLDER%\build
 
 @REM 黑底白字
 COLOR 07
 
-@REM 回到批次檔的原目錄
-CD %PROJECT_FOLDER%\build
-
 ECHO\
-ECHO\
-ECHO\
-ECHO SpringCloud MAVEN 專案 【spring-boot\hello】 編譯完成
-ECHO\
+ECHO SpringCloud 專案 【%PROJECT_PATH_NAME%】 編譯完成
 
 if not "%item_project%"=="a" GOTO :MENU_CHOICE_PROJECT
 
@@ -119,11 +109,6 @@ if not "%item_project%"=="a" GOTO :MENU_CHOICE_PROJECT
 @REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
 @REM 專案 【spring-boot\spring-boot-admin】
 
-
-ECHO\
-ECHO\
-ECHO\
-ECHO\
 ECHO\
 @REM 設定 MAVEN 專案的目錄
 SET PROJECT_PATH_NAME=spring-boot\spring-boot-admin
@@ -156,20 +141,14 @@ CALL %PROJECT_FOLDER%\build\%BUILD_MVN_PROJECT_BAT%
 If "%ENV_VAR%"=="HOME" CALL %PROJECT_FOLDER%\build\%BUILD_DOCKER_IMAGE_BAT%
 
 
-
-
+@REM 回到批次檔的原目錄
+CD %PROJECT_FOLDER%\build
 
 @REM 黑底白字
 COLOR 07
 
-@REM 回到批次檔的原目錄
-CD %PROJECT_FOLDER%\build
-
 ECHO\
-ECHO\
-ECHO\
-ECHO SpringCloud MAVEN 專案 【spring-boot\spring-boot-admin】編譯完成
-ECHO\
+ECHO SpringCloud MAVEN 專案 【%PROJECT_PATH_NAME%】編譯完成
 
 if not "%item_project%"=="a" GOTO :MENU_CHOICE_PROJECT
 

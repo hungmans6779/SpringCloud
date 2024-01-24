@@ -25,8 +25,7 @@ ECHO 1.【家裡開發建置環境】
 ECHO 2.【公司開發建置環境】
 ECHO x.【離開】
 ECHO **************************************************
-ECHO 請選擇建置環境的選項：
-SET /p item_env=
+SET /P item_env=請選擇建置環境的選項 : 
 if "%item_env%"=="1" goto MENU_ENV_HOME
 if "%item_env%"=="2" goto MENU_ENV_COMPANY
 if "%item_env%"=="x" goto MENU_ENV_EXIT
