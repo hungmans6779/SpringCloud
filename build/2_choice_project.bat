@@ -101,11 +101,19 @@ ECHO SpringCloud 專案 【%PROJECT_PATH_NAME%】 編譯完成
 ECHO\
 
 
+if "%item_project%"=="1" (
+  @REM 建置此專案結束後，回到專案選單
+  GOTO MENU_CHOICE_PROJECT
+) else (
+  @REM 建置所有專案，往下個專案繼續執行....(如為最後一個專案時，則自動回到專案選單)
+  GOTO MENU_PROJECT_ITEM002
+)
+
 @REM 建置此專案結束後，回到專案選單
-if not "%item_project%"=="a" GOTO :MENU_CHOICE_PROJECT
+@REM if not "%item_project%"=="a" GOTO :MENU_CHOICE_PROJECT
 
 @REM 建置所有專案，往下個專案繼續執行....
-if "%item_project%"=="a" GOTO MENU_PROJECT_ITEM002
+@REM if "%item_project%"=="a" GOTO MENU_PROJECT_ITEM002
 
 @REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
 
@@ -161,11 +169,19 @@ ECHO SpringCloud MAVEN 專案【%PROJECT_PATH_NAME%】編譯完成
 ECHO\
 
 
+if "%item_project%"=="2" (
+  @REM 建置此專案結束後，回到專案選單
+  GOTO MENU_CHOICE_PROJECT
+) else (
+  @REM 建置所有專案，往下個專案繼續執行....(如為最後一個專案時，則自動回到專案選單)
+  GOTO MENU_CHOICE_PROJECT
+)
+
 @REM 建置此專案結束後，回到專案選單
-if not "%item_project%"=="a" GOTO :MENU_CHOICE_PROJECT
+@REM if not "%item_project%"=="a" GOTO :MENU_CHOICE_PROJECT
 
 @REM 建置所有專案，往下個專案繼續執行....(如為最後一個專案時，則自動回到專案選單)
-if "%item_project%"=="a" GOTO MENU_CHOICE_PROJECT
+@REM if "%item_project%"=="a" GOTO MENU_CHOICE_PROJECT
 
 @REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
 
