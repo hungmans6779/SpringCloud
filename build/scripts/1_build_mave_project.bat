@@ -4,15 +4,14 @@ CLS
 @REM ¶Â©³¥Õ¦r
 COLOR 07
 
-ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹
-ECHO MAVEN ±M®×«Ø¸m¶}©l¡G¡i%PROJECT_PATH_NAME%¡j
 
 @REM MAVEN ±M®×«Ø¸m
+ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹
+ECHO MAVEN ±M®×«Ø¸m¶}©l¡G¡i%PROJECT_PATH_NAME%¡j
 ECHO\
-CALL mvn clean install package -s %M2_CONF_REPO% -f ..\%PROJECT_PATH_NAME%\pom.xml
+CALL mvn clean install package -s %M2_CONF_REPO% -f %PROJECT_FOLDER%\%PROJECT_PATH_NAME%\pom.xml
 ECHO\
 ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹
-
 
 
 @REM ½Æ»s½sÄ¶§¹¦¨ªº JAR ¨ì§å¦¸¥Ø¿ý
@@ -20,19 +19,12 @@ ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡
 ECHO\
 ECHO ½Æ»s½sÄ¶§¹¦¨ªº JAR ¨ì§å¦¸¥Ø¿ý
 if "%PROJECT_CHILD_PATH_NAME%"=="" (
-
-   @REM µL¤l±M®×
    CALL COPY %PROJECT_FOLDER%\%PROJECT_PATH_NAME%\target\*.jar %PROJECT_FOLDER%\run_jar\%PROJECT_PATH_NAME%\jar\
-   
 ) else (
-
-   @REM ¦³¤l±M®×
    CALL COPY %PROJECT_FOLDER%\%PROJECT_CHILD_PATH_NAME%\target\*.jar %PROJECT_FOLDER%\run_jar\%PROJECT_CHILD_PATH_NAME%\
-   
 )
 ECHO\
 ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹
-
 
 
 @REM OWASP Dependency-Check ÀË¬d JAR ªº®zÂI
@@ -63,4 +55,3 @@ If "%ENV_VAR%"=="HOME" (
   ECHO\
   ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹
 )
-

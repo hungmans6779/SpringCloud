@@ -11,13 +11,15 @@ ECHO DockerImage：%DOCKER_IMAGE_NAME%:%DOCKER_IMAGE_TAG% 建置開始
 if "%PROJECT_CHILD_PATH_NAME%"=="" (
   CD %PROJECT_FOLDER%\%PROJECT_PATH_NAME%\
 ) else (
-  CD %PROJECT_FOLDER%\%PROJECT_CHILD_PATH_NAME%
+  CD %PROJECT_FOLDER%\%PROJECT_CHILD_PATH_NAME%\
 )
+
 
 ECHO\
 @REM 建置 Docker Image
 ECHO 建置 Dockerfile
 CALL docker build --build-arg JAR_FILE=target/*.jar -t %DOCKER_IMAGE_NAME%:%DOCKER_IMAGE_TAG% .
+
 
 ECHO\
 @REM Image push DockerHub (帳號：kevinhung)
