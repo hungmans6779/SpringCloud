@@ -109,12 +109,6 @@ if "%item_project%"=="1" (
   GOTO MENU_PROJECT_ITEM002
 )
 
-@REM 建置此專案結束後，回到專案選單
-@REM if not "%item_project%"=="a" GOTO :MENU_CHOICE_PROJECT
-
-@REM 建置所有專案，往下個專案繼續執行....
-@REM if "%item_project%"=="a" GOTO MENU_PROJECT_ITEM002
-
 @REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
 
 
@@ -176,13 +170,6 @@ if "%item_project%"=="2" (
   @REM 建置所有專案，往下個專案繼續執行....(如為最後一個專案時，則自動回到專案選單)
   GOTO MENU_CHOICE_PROJECT
 )
-
-@REM 建置此專案結束後，回到專案選單
-@REM if not "%item_project%"=="a" GOTO :MENU_CHOICE_PROJECT
-
-@REM 建置所有專案，往下個專案繼續執行....(如為最後一個專案時，則自動回到專案選單)
-@REM if "%item_project%"=="a" GOTO MENU_CHOICE_PROJECT
-
 @REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
 
 
