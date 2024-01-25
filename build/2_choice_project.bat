@@ -131,6 +131,7 @@ SET PROJECT_CHILD_PATH_NAME=spring-boot\spring-boot-admin\spring-boot-admin_serv
 SET DOCKER_IMAGE_NAME=kevinhung/spring-boot-admin_server
 
 @REM 建置 Maven 專案
+SET IS_BUILD_MAVEN_PROJECT=TRUE
 CALL %PROJECT_FOLDER%\build\%BUILD_MVN_PROJECT_BAT%
 
 @REM 建置 Docker Image (如果是在家建置才執行 Docker Image 的建置和佈版)
@@ -145,6 +146,7 @@ SET PROJECT_CHILD_PATH_NAME=spring-boot\spring-boot-admin\spring-boot-admin_clie
 SET DOCKER_IMAGE_NAME=kevinhung/spring-boot-admin_client
 
 @REM 建置 Maven 專案
+SET IS_BUILD_MAVEN_PROJECT=FALSE
 CALL %PROJECT_FOLDER%\build\%BUILD_MVN_PROJECT_BAT%
 
 @REM 建置 Docker Image (如果是在家建置才執行 Docker Image 的建置和佈版)
@@ -186,11 +188,9 @@ COLOR 07
 @REM 清除螢幕
 CLS
 
-ECHO\
-ECHO 離開專案建置選單
-ECHO\
-PAUSE
-ECHO\
+@REM 直接開選單
+exit
+
 @REM ○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○○
 
 

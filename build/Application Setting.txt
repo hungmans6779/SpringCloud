@@ -1,0 +1,12 @@
+-Dspring.devtools.restart.enabled=true
+
+spring-boot-admin_server
+com.spring.boot.admin.AdminServerApplication
+
+spring-boot-admin_client
+com.spring.boot.admin.AdminClientApplication
+
+
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes=HelloApplication.class)
