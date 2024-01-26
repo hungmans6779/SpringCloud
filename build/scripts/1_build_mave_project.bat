@@ -9,7 +9,9 @@ COLOR 07
 ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 ECHO MAVEN 專案建置開始：【%PROJECT_PATH_NAME%】
 ECHO\
-CALL mvn clean install package -s %M2_CONF_REPO% -f %PROJECT_FOLDER%\%PROJECT_PATH_NAME%\pom.xml
+if "%IS_BUILD_MAVEN_PROJECT%"=="TRUE" (
+  CALL mvn clean install package -s %M2_CONF_REPO% -f %PROJECT_FOLDER%\%PROJECT_PATH_NAME%\pom.xml
+)
 ECHO\
 ECHO ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
