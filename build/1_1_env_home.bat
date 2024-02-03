@@ -3,19 +3,19 @@ ECHO °π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°π°
 ECHO °iÆa∏Ã∂}µo´ÿ∏m¿Ùπ“≈‹º∆°j
 
 @REM ≥]©w JAVA ≥n•Û∏ÙÆ|
-SET JAVA_HOME=D:\Developers\Tools\jdk-17.0.9.9-hotspot
+SET JAVA_HOME=D:\Developers\Tools\jdk-17.0.10.7-hotspot
 ECHO\
 ECHO JAVA_HOME ≈‹º∆°G°m%JAVA_HOME%°n
 
 
 @REM ≥]©w MAVEN ≥n•Û∏ÙÆ|
-SET M2_HOME=D:\Developers\Tools\Maven-4.0.0-alpha-10
+SET M2_HOME=D:\Developers\Tools\Maven-4.0.0-alpha-12
 ECHO\
 ECHO M2_HOME ≈‹º∆°G°m%M2_HOME%°n
 
 
 @REM ≥]©w MAVEN REPO ∏ÙÆ|
-SET M2_CONF_REPO=D:\Developers\Tools\Maven-4.0.0-alpha-10\conf\settings_SpringCloud.xml
+SET M2_CONF_REPO=D:\Developers\Tools\Maven-4.0.0-alpha-12\conf\settings_SpringCloud.xml
 ECHO\
 ECHO M2_CONF_REPO ≈‹º∆°G°m%M2_CONF_REPO%°n
 
