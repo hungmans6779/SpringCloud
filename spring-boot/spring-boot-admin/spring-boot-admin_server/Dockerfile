@@ -1,4 +1,4 @@
-FROM kevinhung/custom-liberica-openjdk-musl:17.0.9
+FROM kevinhung/custom-openjdk:17
 
 VOLUME /tmp
 
