@@ -42,7 +42,7 @@ CLS
 @REM 黑底白字
 COLOR 07
 
-@REM 設定開發建置變數
+@REM 設定開發建置變數 (家裡開發建置環境)
 SET ENV_VAR=HOME
 
 ECHO 建置環境的批次：《1_1_env_home.bat》
@@ -67,7 +67,7 @@ CLS
 @REM 灰底白字
 COLOR 87
 
-@REM 開發建置變數
+@REM 開發建置變數 (公司開發建置環境)
 SET ENV_VAR=COMPANY
 
 ECHO 建置環境的批次：《1_2_env_company.bat》

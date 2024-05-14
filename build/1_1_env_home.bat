@@ -3,25 +3,25 @@ ECHO ¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡¹¡
 ECHO ¡i®a¸Ì¶}µo«Ø¸mÀô¹ÒÅÜ¼Æ¡j
 
 @REM ³]©w JAVA ³n¥ó¸ô®|
-SET JAVA_HOME=D:\Developers\Tools\jdk-17.0.10.7-hotspot
+SET JAVA_HOME=D:\Developers\Tools\jdk-17.0.11.9-hotspot
 ECHO\
 ECHO JAVA_HOME ÅÜ¼Æ¡G¡m%JAVA_HOME%¡n
 
 
 @REM ³]©w MAVEN ³n¥ó¸ô®|
-SET M2_HOME=D:\Developers\Tools\Maven-4.0.0-alpha-12
+SET M2_HOME=D:\Developers\Tools\Maven-4.0.0-alpha-13
 ECHO\
 ECHO M2_HOME ÅÜ¼Æ¡G¡m%M2_HOME%¡n
 
 
 @REM ³]©w MAVEN REPO ¸ô®|
-SET M2_CONF_REPO=D:\Developers\Tools\Maven-4.0.0-alpha-12\conf\settings_SpringCloud.xml
+SET M2_CONF_REPO=D:\Developers\Tools\Maven-4.0.0-alpha-13\conf\settings_SpringCloud.xml
 ECHO\
 ECHO M2_CONF_REPO ÅÜ¼Æ¡G¡m%M2_CONF_REPO%¡n
 
 
 @REM ³]©w¥»¾÷ªº dependency-check ¸ô®|
-SET dependency-check_PATH=D:\Developers\Tools\dependency-check\dependency-check-9.0.9\bin
+SET dependency-check_PATH=D:\Developers\Tools\dependency-check\dependency-check-9.1.0\bin
 ECHO\
 ECHO dependency-check_PATH ÅÜ¼Æ¡G¡m%dependency-check_PATH%¡n
 
